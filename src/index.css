@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.nav {
+  @apply flex justify-between px-5 py-4 items-center w-full bg-mainBg dark:bg-mainBgDark font-pop shadow-mainBgDark dark:shadow-mainBg shadow-sm fixed top-0 left-0
+}
+.logo {
+  @apply font-bold text-xl text-mainText dark:text-mainTextDark outline-none
+}
+.theme {
+  @apply md:hidden text-mainText dark:text-mainTextDark outline-none
+}
+.git {
+  @apply text-mainText dark:text-mainTextDark
+}
+
+
+.boxTools {
+  @apply aspect-square border-2 font-pop border-mainBgDark  dark:border-mainBg text-mainText dark:text-mainTextDark my-20 p-5 rounded
+}
+.field {
+  @apply border-2 p-2 rounded border-mainBgDark w-full font-pop
+}
+.input {
+  @apply bg-transparent outline-none w-full text-mainBgDark font-semibold
+}
+.check {
+  @apply border bg-transparent p-5
+}
+.select {
+  @apply bg-transparent outline-none w-full
+}
+.btn-gen {
+  @apply bg-mainBTn p-3 text-center w-full rounded-lg font-pop text-mainTextDark outline-none
+}
+.textarea {
+  @apply w-full h-40 border-2 my-10 bg-transparent border-mainBgDark rounded p-2 outline-none
+}
