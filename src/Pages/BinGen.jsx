@@ -10,41 +10,72 @@ export default function CCGEN() {
   )
 
   const [results, setResults] = useState({})
-
-  const initialState = {
+  const [form, setForm] = useState({
     bin: 0,
     date: false,
     month: 'random',
     year: 'random',
-    cvv: 0,
     cvvCheck: false,
-    quantity: 0,
-    type: 'pipe'
+    cvv: 0,
+    quantity: 10
+  })
+
+  const handleInput = e => {
+    setForm(() => ({
+      ...form,
+      [e.target.name]: e.target.value
+    }))
   }
-  const postRedcuer = (state, action) => {
-    switch (action.type) {
-      case 'INPUT':
-        return {
-          ...state, [action.payload.name]: action.payload.value
-        }
-      case 'DATE':
-        return {
-          ...state, date: !state.date
-        }
-      case 'CVV':
-        return {
-          ...state, cvvCheck: !state.cvvCheck
-        }
-      default:
-        return state
+
+  const binValid = () => {
+    if(form.bin?.length === 6){
+      const random = Math.floor(Math.random() * (9999999999 - 1000000000 + 1)) + 1000000000
+      return `${form.bin}${random}`
+    }
+    else if(form.bin?.length === 7){
+      const random = Math.floor(Math.random() * (999999999 - 100000000 + 1)) + 100000000
+      return `${form.bin}${random}`
+    }
+    else if(form.bin?.length === 8){
+      const random = Math.floor(Math.random() * (99999999 - 10000000 + 1)) + 10000000
+      return `${form.bin}${random}`
+    }
+    else if(form.bin?.length === 9){
+      const random = Math.floor(Math.random() * (9999999 - 1000000 + 1)) + 1000000
+      return `${form.bin}${random}`
+    }
+    else if(form.bin?.length === 10){
+      const random = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000
+      return `${form.bin}${random}`
+    }
+    else if(form.bin?.length === 11){
+      const random = Math.floor(Math.random() * (99999 - 10000 + 1)) + 10000
+      return `${form.bin}${random}`
+    }
+    else if(form.bin?.length === 12){
+      const random = Math.floor(Math.random() * (9998 - 1000 + 1)) + 1000
+      return `${form.bin}${random}`
+    }
+    else if(form.bin?.length === 13){
+      const random = Math.floor(Math.random() * (999 - 100 + 1)) + 100
+      return `${form.bin}${random}`
+    }
+    else if(form.bin?.length === 14){
+      const random = Math.floor(Math.random() * (99 - 10 + 1)) + 10
+      return `${form.bin}${random}`
+    }
+    else if(form.bin?.length === 15){
+      const random = Math.floor(Math.random() * (9 - 1 + 1)) + 1
+      return `${form.bin}${random}`
+    }
+    else {
+      return form.bin
     }
   }
-  const [state, dispatch] = useReducer(postRedcuer, initialState)
 
-  const handleResults = e => {
-    dispatch({ type: 'INPUT', payload: {name: e.target.name, value: e.target.value} })
-    setResults(state)
-    console.log(results)
+  const handleClick = e => {
+    e.preventDefault()
+    console.log(binValid())
   }
 
   return <>
@@ -56,18 +87,18 @@ export default function CCGEN() {
       <div className='grid gap-5'>
         <fieldset className='field'>
           <legend className='legend'>Bin</legend>
-          <input  className='input' type="number" onChange={handleResults} name="bin" placeholder='454393' />
+          <input  className='input' type="number" onChange={handleInput} name="bin" placeholder='454393' />
         </fieldset>
 
         <div className='flex gap-3 font-pop'>
           <div className='flex gap-5 items-center'>
-            <input onClick={() => dispatch({ type: 'CHECK' })} className='check' type="checkbox" name="date" />
+            <input onClick={handleInput} className='check' type="checkbox" name="date" />
             <label htmlFor="date">Date</label>
           </div>
 
           <fieldset className='field'>
              <legend className='legend'>MONTH</legend>
-             <select className='select'  onChange={handleResults} name="month">
+             <select className='select'  onChange={handleInput} name="month">
                {month.map( month => {
                  return <option key={month} value={month}>{month}</option>
                })}
@@ -76,7 +107,7 @@ export default function CCGEN() {
 
           <fieldset className='field'>
             <legend className='legend'>Year</legend>
-             <select className='select'  onChange={handleResults} name="year">
+             <select className='select'  onChange={handleInput} name="year">
                {year.map( year => {
                  return <option key={year} value={year}>{year}</option>
                })}
@@ -87,31 +118,31 @@ export default function CCGEN() {
         
         <div className='flex gap-5'>
           <div className='flex gap-5 items-center'>
-            <input onClick={() => dispatch({ type: 'CVV' })} className='check' type="checkbox" name="cvvCheck" />
+            <input onClick={handleInput} className='check' type="checkbox" name="cvvCheck" />
             <label htmlFor="date">Cvv</label>
           </div>
 
           <fieldset className='field'>
             <legend className='legend'>CVV</legend>
-            <input  onChange={handleResults} className='input' type="number" name="cvv" placeholder='Leave blank to random' />
+            <input  onChange={handleInput} className='input' type="number" name="cvv" placeholder='Leave blank to random' />
           </fieldset>
             
           <fieldset className='field'>
             <legend className='legend'>Quantity</legend>
-            <input  onChange={handleResults} className='input' type="number" name="quantity" placeholder='10' />
+            <input  onChange={handleInput} className='input' type="number" name="quantity" placeholder='10' />
           </fieldset>
         </div>
 
         <fieldset className='field'>
           <legend className='legend'>Pipe</legend>
-          <select onChange={handleResults} className='select' name="type">
+          <select onChange={handleInput} className='select' name="type">
             <option value="pipe">PIPE</option>
             <option value="json">JSON</option>
             <option value="csv">CSV</option>
           </select>
         </fieldset>
         
-        <button className='btn-gen' type="submit">Generate</button>
+        <button onClick={handleClick} className='btn-gen' type="submit">Generate</button>
       </div>
       </form>
 
