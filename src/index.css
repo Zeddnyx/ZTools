@@ -23,6 +23,9 @@
 .field {
   @apply border-2 p-2 rounded border-mainBgDark w-full font-pop
 }
+.legend {
+  @apply text-mainText px-3
+}
 .input {
   @apply bg-transparent outline-none w-full text-mainBgDark font-semibold
 }

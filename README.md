@@ -1,2 +1,1 @@
-# Chalange from frontendmentor
 
