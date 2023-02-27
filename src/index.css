@@ -18,7 +18,7 @@
 
 
 .boxTools {
-  @apply aspect-square border-2 font-pop border-mainBgDark  dark:border-mainBg text-mainText dark:text-mainTextDark my-20 p-5 rounded
+  @apply aspect-square border-2 font-pop border-mainBgDark  dark:border-mainBg text-mainText dark:text-mainTextDark my-20 p-5 rounded outline-none w-full
 }
 .field {
   @apply border-2 p-2 rounded border-mainBgDark w-full font-pop

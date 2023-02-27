@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useReducer, useState } from 'react'
-import { BinValid } from '../Components/BinGen/BinValidator'
+import BinValidator from '../Components/BinGen/BinValidator'
 
 export default function CCGEN() {
   const [month, setMonth] = useState(
-    ['01','02','03','04','05','06','07','08','09','10','11','12']
+    ['random','01','02','03','04','05','06','07','08','09','10','11','12']
   )
   const [year, setYear] = useState(
-    ['2023','2024','2025','2026','2027','2028','2029','2030','2031']
+    ['random','2023','2024','2025','2026','2027','2028','2029','2030','2031']
   )
 
   const [results, setResults] = useState({})
@@ -31,8 +31,7 @@ export default function CCGEN() {
 
   const handleClick = e => {
     e.preventDefault()
-    // console.log(BinValid(form.bin))
-     console.log(form)
+    console.log(BinValidator(form.bin))
   }
 
   return <>
@@ -56,7 +55,6 @@ export default function CCGEN() {
           <fieldset className='field'>
              <legend className='legend'>MONTH</legend>
              <select className='select'  onChange={handleInput} name="month">
-               <option value="random">Random</option>
                {month.map( month => {
                  return <option key={month} value={month}>{month}</option>
                })}
@@ -66,7 +64,6 @@ export default function CCGEN() {
           <fieldset className='field'>
             <legend className='legend'>Year</legend>
              <select className='select'  onChange={handleInput} name="year">
-               <option value="random">Random</option>
                {year.map( year => {
                  return <option key={year} value={year}>{year}</option>
                })}
