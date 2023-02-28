@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useReducer, useState } from 'react'
 import { BinValid } from '../Components/BinGen/BinValidator'
+import { MonthValid } from '../Components/BinGen/MonthValid'
 
 export default function CCGEN() {
   const [month, setMonth] = useState(
@@ -14,8 +15,8 @@ export default function CCGEN() {
   const [form, setForm] = useState({
     bin: 0,
     date: false,
-    month: 'random',
-    year: 'random',
+    month: '',
+    year: '',
     cvvCheck: false,
     cvv: 0,
     quantity: 10
@@ -32,7 +33,7 @@ export default function CCGEN() {
   const handleClick = e => {
     e.preventDefault()
     // console.log(BinValid(form.bin))
-     console.log(form)
+     console.log(MonthValid(form.date, form.month, form.year))
   }
 
   return <>
