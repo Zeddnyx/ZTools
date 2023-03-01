@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { BsGithub } from 'react-icons/bs'
 import { MdBrightness2, MdBrightnessMedium} from 'react-icons/md'
+import { Link } from 'react-router-dom'
 
 export default function Nav() {
   const [theme, setTheme] = useState('dark')
@@ -28,7 +29,7 @@ export default function Nav() {
 
   return <nav className='nav'>
     <button className='logo'>
-      <h1>Logo</h1>
+      <Link to='/'>Logo</Link>
     </button>
 
     <div className='flex items-center gap-8 outline-none'>

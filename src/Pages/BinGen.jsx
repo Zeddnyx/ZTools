@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { useReducer, useState } from 'react'
 import { BinValid } from '../Components/BinGen/BinValidator'
 import { MonthValid } from '../Components/BinGen/MonthValid'
@@ -10,16 +9,20 @@ export default function CCGEN() {
   const [year, setYear] = useState(
     ['2023','2024','2025','2026','2027','2028','2029','2030','2031']
   )
+  const [results, setResults] = useState([])
 
-  const [results, setResults] = useState({})
+  // generate random number betwen 0 - 11
+  const randomMonth = Math.floor(Math.random() * 11 ) + 0
+
+  console.log(randomMonth)
   const [form, setForm] = useState({
     bin: 0,
     date: false,
-    month: '',
-    year: '',
+    month: month[randomMonth],
+    year: 'random',
     cvvCheck: false,
     cvv: 0,
-    quantity: 10
+    quantity: 10,
   })
 
   const handleInput = e => {
@@ -29,18 +32,20 @@ export default function CCGEN() {
     }))
   }
 
-
   const handleClick = e => {
     e.preventDefault()
-    // console.log(BinValid(form.bin))
-     console.log(MonthValid(form.date, form.month, form.year))
+
+    // jadi form.quantity akan memntukan berapa jumlah yg mau di generate
+    for (let i = 0; i < form.quantity; i++){
+      // setResults(...results, [form.month])
+      console.log(randomMonth)
+    }
   }
 
+
   return <>
-    <div className='my-20'>
-      <Link to='/'>Back</Link>
-    </div>
-    <section className='max-w-sm mx-auto'>
+    <section className='section'>
+      <h1 className='heading-judul'>Bin Generator</h1>
       <form>
       <div className='grid gap-2'>
         <fieldset className='field'>
@@ -51,7 +56,7 @@ export default function CCGEN() {
         <div className='flex gap-3 font-pop'>
           <div className='flex gap-5 items-center'>
             <input onClick={handleInput} className='check' type="checkbox" name="date" />
-            <label htmlFor="date">Date</label>
+            <label className='label' htmlFor="date">DATE</label>
           </div>
 
           <fieldset className='field'>
@@ -75,11 +80,10 @@ export default function CCGEN() {
           </fieldset>
         </div>
 
-        
         <div className='flex gap-5'>
           <div className='flex gap-5 items-center'>
             <input onClick={handleInput} className='check' type="checkbox" name="cvvCheck" />
-            <label htmlFor="date">Cvv</label>
+            <label className='label' htmlFor="cvvCheck">CVV</label>
           </div>
 
           <fieldset className='field'>
@@ -102,12 +106,11 @@ export default function CCGEN() {
           </select>
         </fieldset>
         
-        <button onClick={handleClick} className='btn-gen' type="submit">Generate</button>
+        <button onClick={handleClick} className='btn' type="submit">Generate</button>
       </div>
       </form>
 
-      <div className='textarea'>
-      </div>
+      <textarea className='textarea'></textarea>
     </section>
   </>
 }

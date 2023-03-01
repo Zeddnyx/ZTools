@@ -3,6 +3,7 @@ import Nav from './Components/Navbar'
 import Home from './Pages/Homepage'
 import Cekrek from './Pages/Cekrek'
 import CCGEN from './Pages/BinGen'
+import SendWa from './Pages/SendWa'
 
 function App() {
   return <>
@@ -14,8 +15,9 @@ function App() {
     <div className='max-w-5xl mx-auto px-5 xl:px-20'>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/tools1' element={<Cekrek />} />
-        <Route path='/bingenerator' element={<CCGEN />} />
+        <Route path='/check-rek' element={<Cekrek />} />
+        <Route path='/bin-generator' element={<CCGEN />} />
+        <Route path='/send-wa' element={<SendWa />} />
       </Routes>
     </div>
   </Router>

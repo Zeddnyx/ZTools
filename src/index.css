@@ -18,26 +18,37 @@
 
 
 .boxTools {
-  @apply aspect-square border-2 font-pop border-mainBgDark  dark:border-mainBg text-mainText dark:text-mainTextDark my-20 p-5 rounded outline-none w-full
+  @apply border-2 font-pop border-mainBgDark  dark:border-mainBg text-mainText dark:text-mainText p-5 rounded outline-none w-full
 }
 .field {
-  @apply border-2 p-2 rounded border-mainBgDark w-full font-pop
+  @apply border-2 p-1 rounded border-mainBgDark dark:border-mainBg w-full font-pop text-mainText dark:text-mainTextDark
 }
 .legend {
-  @apply text-mainText px-3
+  @apply px-3 text-mainText dark:text-mainTextDark
 }
 .input {
-  @apply bg-transparent outline-none w-full text-mainBgDark font-semibold
+  @apply bg-transparent outline-none w-full font-semibold text-mainText dark:text-mainTextDark p-1
+}
+.label {
+  @apply font-bold text-mainText dark:text-mainTextDark
 }
 .check {
-  @apply border bg-transparent p-5
+  @apply border bg-transparent p-5  text-mainText dark:text-mainTextDark
 }
 .select {
-  @apply bg-transparent outline-none w-full
+  @apply bg-transparent outline-none w-full text-mainText dark:text-mainTextDark dark:bg-mainBgDark
 }
-.btn-gen {
-  @apply bg-mainBTn p-3 text-center w-full rounded-lg font-pop text-mainTextDark outline-none
+.btn {
+  @apply bg-transparent border-2 border-mainBgDark dark:border-mainBg p-3 text-center w-full rounded-lg font-pop text-mainText dark:text-mainTextDark mt-5 outline-none
 }
 .textarea {
-  @apply w-full h-40 border-2 my-10 bg-transparent border-mainBgDark rounded p-2 outline-none
+  @apply w-full h-40 border-2 my-10 bg-transparent border-mainBgDark dark:border-mainBg rounded p-2 outline-none font-medium
+}
+
+
+.section {
+  @apply max-w-sm mx-auto my-20
+}
+.heading-judul {
+  @apply font-bold text-xl text-center my-5 text-mainText dark:text-mainTextDark
 }
