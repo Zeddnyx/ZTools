@@ -9,20 +9,18 @@ export default function CCGEN() {
   const [year, setYear] = useState(
     ['2023','2024','2025','2026','2027','2028','2029','2030','2031']
   )
+  const [date, setDate] = useState(false)
+  const [cvv, setCvv] = useState(false)
   const [results, setResults] = useState([])
 
-  // generate random number betwen 0 - 11
-  const randomMonth = Math.floor(Math.random() * 11 ) + 0
-
-  console.log(randomMonth)
   const [form, setForm] = useState({
     bin: 0,
     date: false,
-    month: month[randomMonth],
-    year: 'random',
+    month: month[0],
+    year: year[0],
     cvvCheck: false,
-    cvv: 0,
-    quantity: 10,
+    cvv,
+    quantity: 0,
   })
 
   const handleInput = e => {
@@ -37,9 +35,20 @@ export default function CCGEN() {
 
     // jadi form.quantity akan memntukan berapa jumlah yg mau di generate
     for (let i = 0; i < form.quantity; i++){
-      // setResults(...results, [form.month])
-      console.log(randomMonth)
+      if(!date && cvv) {
+        setResults(...results, BinValid(form.bin), form.cvv)
+        console.log(results, 'date no, cvv yes')
+      }
+      if(date && !cvv) {
+        setResults(...results, [BinValid(form.bin), form.month, form.year])
+        console.log(results, 'date yes, cvv no')
+      }
+      if(!date && !cvv) {
+        setResults(BinValid(form.bin))
+        console.log(results, 'date no, cvv no')
+      }
     }
+
   }
 
 
@@ -55,14 +64,13 @@ export default function CCGEN() {
 
         <div className='flex gap-3 font-pop'>
           <div className='flex gap-5 items-center'>
-            <input onClick={handleInput} className='check' type="checkbox" name="date" />
+            <input onClick={() => setDate(!date)} className='check' type="checkbox" name="date" />
             <label className='label' htmlFor="date">DATE</label>
           </div>
 
           <fieldset className='field'>
              <legend className='legend'>MONTH</legend>
              <select className='select'  onChange={handleInput} name="month">
-               <option value="random">Random</option>
                {month.map( month => {
                  return <option key={month} value={month}>{month}</option>
                })}
@@ -72,7 +80,6 @@ export default function CCGEN() {
           <fieldset className='field'>
             <legend className='legend'>Year</legend>
              <select className='select'  onChange={handleInput} name="year">
-               <option value="random">Random</option>
                {year.map( year => {
                  return <option key={year} value={year}>{year}</option>
                })}
@@ -82,7 +89,7 @@ export default function CCGEN() {
 
         <div className='flex gap-5'>
           <div className='flex gap-5 items-center'>
-            <input onClick={handleInput} className='check' type="checkbox" name="cvvCheck" />
+            <input onClick={() => setCvv(!cvv)} className='check' type="checkbox" name="cvvCheck" />
             <label className='label' htmlFor="cvvCheck">CVV</label>
           </div>
 
@@ -93,7 +100,7 @@ export default function CCGEN() {
             
           <fieldset className='field'>
             <legend className='legend'>Quantity</legend>
-            <input  onChange={handleInput} className='input' type="number" name="quantity" placeholder='10' />
+            <input required onChange={handleInput} className='input' type="number" name="quantity" placeholder='10' />
           </fieldset>
         </div>
 
@@ -110,7 +117,7 @@ export default function CCGEN() {
       </div>
       </form>
 
-      <textarea className='textarea'></textarea>
+      <textarea className='textarea' value={results}></textarea>
     </section>
   </>
 }
