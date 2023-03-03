@@ -9,17 +9,17 @@ export default function CCGEN() {
   const [year, setYear] = useState(
     ['2023','2024','2025','2026','2027','2028','2029','2030','2031']
   )
-  const [date, setDate] = useState(false)
-  const [cvv, setCvv] = useState(false)
+  const [dateStats, setDateStats] = useState(false)
+  const [cvvStats, setCvvStats] = useState(false)
   const [results, setResults] = useState([])
 
   const [form, setForm] = useState({
     bin: 0,
-    date: false,
+    date: dateStats,
     month: month[0],
     year: year[0],
-    cvvCheck: false,
-    cvv,
+    cvvCheck: cvvStats,
+    cvv: 0,
     quantity: 0,
   })
 
@@ -33,30 +33,28 @@ export default function CCGEN() {
   const handleClick = e => {
     e.preventDefault()
 
-    // jadi form.quantity akan memntukan berapa jumlah yg mau di generate
+    // form.quantity akan memntukan berapa jumlah yg mau di generate
     for (let i = 0; i < form.quantity; i++){
-      if(!date && cvv) {
-        setResults(...results, BinValid(form.bin), form.cvv)
-        console.log(results, 'date no, cvv yes')
+      if(!dateStats && cvvStats) {
+          setResults([...results, `${BinValid(form.bin)}|${form.cvv}`])
       }
-      if(date && !cvv) {
-        setResults(...results, [BinValid(form.bin), form.month, form.year])
-        console.log(results, 'date yes, cvv no')
+      if(dateStats && !cvvStats) {
+          setResults([...results, `${BinValid(form.bin)}|${form.month}|${form.year}`])
       }
-      if(!date && !cvv) {
-        setResults(BinValid(form.bin))
-        console.log(results, 'date no, cvv no')
+      if(!dateStats && !cvvStats) {
+          setResults([...results, BinValid(form.bin)])
+      }
+      if(dateStats && cvvStats) {
+          setResults([...results, `${BinValid(form.bin)}|${form.month}|${form.year}|${form.cvv}`])
       }
     }
-
+    console.log(results)
   }
-
 
   return <>
     <section className='section'>
       <h1 className='heading-judul'>Bin Generator</h1>
-      <form>
-      <div className='grid gap-2'>
+      <form className='grid gap-2'>
         <fieldset className='field'>
           <legend className='legend'>Bin</legend>
           <input  className='input' type="number" onChange={handleInput} name="bin" placeholder='454393' />
@@ -64,7 +62,7 @@ export default function CCGEN() {
 
         <div className='flex gap-3 font-pop'>
           <div className='flex gap-5 items-center'>
-            <input onClick={() => setDate(!date)} className='check' type="checkbox" name="date" />
+            <input onClick={() => setDateStats(!dateStats)} className='check' type="checkbox" name="date" />
             <label className='label' htmlFor="date">DATE</label>
           </div>
 
@@ -89,7 +87,7 @@ export default function CCGEN() {
 
         <div className='flex gap-5'>
           <div className='flex gap-5 items-center'>
-            <input onClick={() => setCvv(!cvv)} className='check' type="checkbox" name="cvvCheck" />
+            <input onClick={() => setCvvStats(!cvvStats)} className='check' type="checkbox" name="cvvCheck" />
             <label className='label' htmlFor="cvvCheck">CVV</label>
           </div>
 
@@ -105,7 +103,7 @@ export default function CCGEN() {
         </div>
 
         <fieldset className='field'>
-          <legend className='legend'>Pipe</legend>
+          <legend className='legend'>Format</legend>
           <select onChange={handleInput} className='select' name="type">
             <option value="pipe">PIPE</option>
             <option value="json">JSON</option>
@@ -114,10 +112,16 @@ export default function CCGEN() {
         </fieldset>
         
         <button onClick={handleClick} className='btn' type="submit">Generate</button>
-      </div>
       </form>
 
-      <textarea className='textarea' value={results}></textarea>
+      <fieldset className='field mt-14'>
+        <legend className='legend'>Results</legend>
+        <div className='overflow-scroll h-28'>
+          {results.map(list=> {
+            return <p key={list}>{list}</p>
+          })}
+        </div>
+      </fieldset>
     </section>
   </>
 }

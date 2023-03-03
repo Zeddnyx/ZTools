@@ -16,6 +16,13 @@
   @apply text-mainText dark:text-mainTextDark
 }
 
+.section {
+  @apply max-w-md mx-auto my-20
+}
+.heading-judul {
+  @apply font-bold text-xl text-center my-5 text-mainText dark:text-mainTextDark
+}
+
 
 .boxTools {
   @apply border-2 font-pop border-mainBgDark  dark:border-mainBg text-mainText dark:text-mainText p-5 rounded outline-none w-full
@@ -24,7 +31,7 @@
   @apply border-2 p-1 rounded border-mainBgDark dark:border-mainBg w-full font-pop text-mainText dark:text-mainTextDark
 }
 .legend {
-  @apply px-3 text-mainText dark:text-mainTextDark
+  @apply px-1 text-mainText dark:text-mainTextDark
 }
 .input {
   @apply bg-transparent outline-none w-full font-semibold text-mainText dark:text-mainTextDark p-1
@@ -39,16 +46,10 @@
   @apply bg-transparent outline-none w-full text-mainText dark:text-mainTextDark dark:bg-mainBgDark
 }
 .btn {
-  @apply bg-transparent border-2 border-mainBgDark dark:border-mainBg p-3 text-center w-full rounded-lg font-pop text-mainText dark:text-mainTextDark mt-5 outline-none
+  @apply bg-black dark:bg-mainBg p-3 text-center w-full rounded-lg font-pop text-mainText mt-5 outline-none
 }
 .textarea {
-  @apply w-full h-40 border-2 my-10 bg-transparent border-mainBgDark dark:border-mainBg rounded p-2 outline-none font-medium
+  @apply h-40 bg-transparent rounded outline-none font-medium text-mainText dark:text-mainTextDark
 }
 
 
-.section {
-  @apply max-w-sm mx-auto my-20
-}
-.heading-judul {
-  @apply font-bold text-xl text-center my-5 text-mainText dark:text-mainTextDark
-}
