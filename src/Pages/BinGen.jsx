@@ -1,4 +1,4 @@
-import { useReducer, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BinValid } from '../Components/BinGen/BinValidator'
 import { MonthValid } from '../Components/BinGen/MonthValid'
 
@@ -12,7 +12,7 @@ export default function CCGEN() {
   const [dateStats, setDateStats] = useState(false)
   const [cvvStats, setCvvStats] = useState(false)
   const [results, setResults] = useState([])
-
+  const [hasil, setHasil] = useState([])
   const [form, setForm] = useState({
     bin: 0,
     date: dateStats,
@@ -20,7 +20,7 @@ export default function CCGEN() {
     year: year[0],
     cvvCheck: cvvStats,
     cvv: 0,
-    quantity: 0,
+    quantity: 10,
   })
 
   const handleInput = e => {
@@ -32,32 +32,44 @@ export default function CCGEN() {
 
   const handleClick = e => {
     e.preventDefault()
-
+    let i = 0;
     // form.quantity akan memntukan berapa jumlah yg mau di generate
-    for (let i = 0; i < form.quantity; i++){
-      if(!dateStats && cvvStats) {
-          setResults([...results, `${BinValid(form.bin)}|${form.cvv}`])
-      }
-      if(dateStats && !cvvStats) {
-          setResults([...results, `${BinValid(form.bin)}|${form.month}|${form.year}`])
-      }
-      if(!dateStats && !cvvStats) {
-          setResults([...results, BinValid(form.bin)])
-      }
-      if(dateStats && cvvStats) {
-          setResults([...results, `${BinValid(form.bin)}|${form.month}|${form.year}|${form.cvv}`])
+    if(!dateStats && cvvStats) {
+      while ( i < form.quantity ){
+        // idk how to explaine but its work!
+        setResults(results => [...results, `${BinValid(form.bin)}|${form.cvv}`])
+        i++
       }
     }
-    console.log(results)
+    if(dateStats && !cvvStats) {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${form.year}`])
+        i++
+      }
+    }
+    if(!dateStats && !cvvStats) {
+      while ( i < form.quantity ){
+       setResults(results => [...results, BinValid(form.bin)])
+      console.log(results)
+        i++
+      }
+    }
+    if(dateStats && cvvStats) {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${form.year}|${form.cvv}`])
+        i++
+      }
+    }
   }
 
   return <>
     <section className='section'>
       <h1 className='heading-judul'>Bin Generator</h1>
+       <p className='my-5  text-center font-semibold'>Generate random test credit card and card numbers fro testing, validation and verification purposes.</p>
       <form className='grid gap-2'>
         <fieldset className='field'>
           <legend className='legend'>Bin</legend>
-          <input  className='input' type="number" onChange={handleInput} name="bin" placeholder='454393' />
+          <input  className='input' required type="number" onChange={handleInput} name="bin" placeholder='454393' />
         </fieldset>
 
         <div className='flex gap-3 font-pop'>

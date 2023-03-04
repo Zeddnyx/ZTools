@@ -25,7 +25,7 @@
 
 
 .boxTools {
-  @apply border-2 font-pop border-mainBgDark  dark:border-mainBg text-mainText dark:text-mainText p-5 rounded outline-none w-full
+  @apply border-2 font-pop border-mainBgDark  dark:border-mainBg text-mainTextDark dark:text-mainText p-5 rounded outline-none w-full
 }
 .field {
   @apply border-2 p-1 rounded border-mainBgDark dark:border-mainBg w-full font-pop text-mainText dark:text-mainTextDark
@@ -46,7 +46,7 @@
   @apply bg-transparent outline-none w-full text-mainText dark:text-mainTextDark dark:bg-mainBgDark
 }
 .btn {
-  @apply bg-black dark:bg-mainBg p-3 text-center w-full rounded-lg font-pop text-mainText mt-5 outline-none
+  @apply bg-black dark:bg-mainBg p-3 text-center w-full rounded-lg font-pop text-mainTextDark mt-5 outline-none
 }
 .textarea {
   @apply h-40 bg-transparent rounded outline-none font-medium text-mainText dark:text-mainTextDark
