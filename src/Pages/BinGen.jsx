@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { BinValid } from '../Components/BinGen/BinValidator'
-import { MonthValid } from '../Components/BinGen/MonthValid'
+import { MonthRandom, YearRandom } from '../Components/BinGen/DateValid'
+import { Cvv } from '../Components/BinGen/CvvRandom'
 
 export default function CCGEN() {
   const [month, setMonth] = useState(
@@ -14,16 +15,18 @@ export default function CCGEN() {
   const [results, setResults] = useState([])
   const [hasil, setHasil] = useState([])
   const [form, setForm] = useState({
-    bin: 0,
+    bin: '',
     date: dateStats,
-    month: month[0],
-    year: year[0],
+    month: 'random',
+    year: 'random',
     cvvCheck: cvvStats,
     cvv: 0,
     quantity: 10,
   })
 
   const handleInput = e => {
+    // when input field is change 
+    // every change will be store to state form
     setForm(() => ({
       ...form,
       [e.target.name]: e.target.value
@@ -32,16 +35,61 @@ export default function CCGEN() {
 
   const handleClick = e => {
     e.preventDefault()
-    let i = 0;
-    // form.quantity akan memntukan berapa jumlah yg mau di generate
-    if(!dateStats && cvvStats) {
+    let i = 0
+    // if date false and cvv true and cvv not same 0 
+    if(!dateStats && cvvStats && form.cvv !== 0) {
       while ( i < form.quantity ){
         // idk how to explaine but its work!
         setResults(results => [...results, `${BinValid(form.bin)}|${form.cvv}`])
         i++
       }
     }
-    if(dateStats && !cvvStats) {
+    // if cvv true and leave blank will generete random cvv
+    if(!dateStats && cvvStats && form.cvv === 0) {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${Cvv()}`])
+        i++
+      }
+    }
+    // if date true and cvv true but cvv have a value that value will be an output
+    if(dateStats && cvvStats && form.cvv !== 0) {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${form.year}|${form.cvv}`])
+        i++
+      }
+    }
+    if(dateStats && cvvStats && form.cvv === 0 && form.month !== 'random' & form.year !== 'random') {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${form.year}|${Cvv()}`])
+        i++
+      }
+    }
+    if(dateStats && cvvStats && form.cvv === 0 && form.month === 'random' & form.year === 'random') {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${MonthRandom(month)}|${YearRandom(year)}|${Cvv()}`])
+        i++
+      }
+    }
+
+    if(dateStats && !cvvStats && form.month === 'random') {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${MonthRandom(month)}|${form.year}`])
+        i++
+      }
+    }
+    if(dateStats && !cvvStats && form.year === 'random') {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${YearRandom(year)}`])
+        i++
+      }
+    }
+    if(dateStats && !cvvStats && form.month === 'random' && form.year === 'random') {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${MonthRandom(month)}|${YearRandom(year)}`])
+        i++
+      }
+    }
+    if(dateStats && !cvvStats && form.year !== 'random' && form.month !== 'random') {
       while ( i < form.quantity ){
         setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${form.year}`])
         i++
@@ -50,22 +98,18 @@ export default function CCGEN() {
     if(!dateStats && !cvvStats) {
       while ( i < form.quantity ){
        setResults(results => [...results, BinValid(form.bin)])
-      console.log(results)
-        i++
+       i++
       }
     }
-    if(dateStats && cvvStats) {
-      while ( i < form.quantity ){
-        setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${form.year}|${form.cvv}`])
-        i++
-      }
-    }
+
+
   }
+  // console.log('Contact me on telegram https://t.me/Zeddnyx')
 
   return <>
     <section className='section'>
       <h1 className='heading-judul'>Bin Generator</h1>
-       <p className='my-5  text-center font-semibold'>Generate random test credit card and card numbers fro testing, validation and verification purposes.</p>
+       <p className='my-5  text-center font-semibold text-mainText'>Generate random test credit card and card numbers fro testing, validation and verification purposes.</p>
       <form className='grid gap-2'>
         <fieldset className='field'>
           <legend className='legend'>Bin</legend>
@@ -81,6 +125,7 @@ export default function CCGEN() {
           <fieldset className='field'>
              <legend className='legend'>MONTH</legend>
              <select className='select'  onChange={handleInput} name="month">
+               <option value="random">Random</option>
                {month.map( month => {
                  return <option key={month} value={month}>{month}</option>
                })}
@@ -90,6 +135,7 @@ export default function CCGEN() {
           <fieldset className='field'>
             <legend className='legend'>Year</legend>
              <select className='select'  onChange={handleInput} name="year">
+               <option value="random">Random</option>
                {year.map( year => {
                  return <option key={year} value={year}>{year}</option>
                })}

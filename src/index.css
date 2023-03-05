@@ -2,54 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .nav {
-  @apply flex justify-between px-5 py-4 items-center w-full bg-mainBg dark:bg-mainBgDark font-pop shadow-mainBgDark dark:shadow-mainBg shadow-sm fixed top-0 left-0
+  @apply flex justify-between px-5 py-4 items-center w-full bg-mainBg  font-pop  shadow-sm fixed top-0 left-0
 }
 .logo {
-  @apply font-bold text-xl text-mainText dark:text-mainTextDark outline-none
+  @apply font-bold text-xl text-mainText  outline-none
 }
 .theme {
-  @apply md:hidden text-mainText dark:text-mainTextDark outline-none
+  @apply md:hidden text-mainText  outline-none
 }
 .git {
-  @apply text-mainText dark:text-mainTextDark
+  @apply text-mainText 
 }
 
 .section {
-  @apply max-w-md mx-auto my-20
+  @apply max-w-md mx-auto my-20 bg-mainBg
 }
 .heading-judul {
-  @apply font-bold text-xl text-center my-5 text-mainText dark:text-mainTextDark
+  @apply font-bold text-xl text-center my-5 text-mainText
 }
 
 
 .boxTools {
-  @apply border-2 font-pop border-mainBgDark  dark:border-mainBg text-mainTextDark dark:text-mainText p-5 rounded outline-none w-full
+  @apply border-2 font-pop text-mainText p-5 rounded outline-none w-full
 }
 .field {
-  @apply border-2 p-1 rounded border-mainBgDark dark:border-mainBg w-full font-pop text-mainText dark:text-mainTextDark
+  @apply border-2 p-1 rounded  w-full font-pop text-mainText
 }
 .legend {
-  @apply px-1 text-mainText dark:text-mainTextDark
+  @apply px-1 text-mainText
 }
 .input {
-  @apply bg-transparent outline-none w-full font-semibold text-mainText dark:text-mainTextDark p-1
+  @apply bg-transparent outline-none w-full font-semibold text-mainText  p-1
 }
 .label {
-  @apply font-bold text-mainText dark:text-mainTextDark
+  @apply font-bold text-mainText 
 }
 .check {
-  @apply border bg-transparent p-5  text-mainText dark:text-mainTextDark
+  @apply border bg-transparent p-5  text-mainText 
 }
 .select {
-  @apply bg-transparent outline-none w-full text-mainText dark:text-mainTextDark dark:bg-mainBgDark
+  @apply bg-mainBg outline-none w-full text-mainText
 }
 .btn {
-  @apply bg-black dark:bg-mainBg p-3 text-center w-full rounded-lg font-pop text-mainTextDark mt-5 outline-none
+  @apply bg-mainBtn p-3 text-center w-full rounded-lg font-pop text-mainText mt-5 outline-none
 }
 .textarea {
-  @apply h-40 bg-transparent rounded outline-none font-medium text-mainText dark:text-mainTextDark
+  @apply h-40 bg-transparent rounded outline-none font-medium text-mainText
 }
 
 

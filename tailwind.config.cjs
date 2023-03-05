@@ -4,7 +4,7 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  darkMode: 'class',
+  // darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -14,11 +14,9 @@ module.exports = {
         sm: '18px',
       },
       colors: {
-        mainBg: '#96bfff',
-        mainBgDark: '#2d3e57',
-        
-        mainText: '#071529',
-        mainTextDark: '#eee'
+        mainBg: '#3e4451',
+        mainText: '#abb2bf',
+        mainBtn: '#282c34'
       },
     },
   },
