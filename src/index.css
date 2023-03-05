@@ -27,28 +27,28 @@
   @apply shadow-lg hover:shadow-xl font-pop text-mainText p-5 rounded outline-none w-full
 }
 .field {
-  @apply border-2 border-mainBtn p-1 rounded  w-full font-pop text-mainText
+  @apply border-2 border-mainBtn p-1 rounded  w-full font-pop text-mainText w-full
 }
 .legend {
-  @apply px-1 text-mainText
+  @apply text-mainText text-xs
 }
 .input {
-  @apply bg-transparent outline-none w-full font-semibold text-mainText  p-1
+  @apply bg-transparent outline-none w-full font-semibold text-mainText text-xs
 }
 .label {
-  @apply font-bold text-mainText 
+  @apply font-bold text-mainText text-xs
 }
 .check {
   @apply border bg-transparent p-5  text-mainText 
 }
 .select {
-  @apply bg-mainBg outline-none w-full text-mainText
+  @apply bg-mainBg outline-none w-full text-mainText text-xs
 }
 .btn {
   @apply bg-mainBtn p-3 text-center w-full rounded-lg font-pop text-mainText mt-5 outline-none
 }
 .textarea {
-  @apply h-40 bg-transparent rounded outline-none font-medium text-mainText
+  @apply h-40 bg-transparent rounded outline-none font-medium text-mainText text-xs
 }
 
 

@@ -36,7 +36,6 @@ export default function CCGEN() {
   const handleClick = e => {
     e.preventDefault()
     let i = 0
-    // if date false and cvv true and cvv not same 0 
     if(!dateStats && cvvStats && form.cvv !== 0) {
       while ( i < form.quantity ){
         // idk how to explaine but its work!
@@ -51,44 +50,84 @@ export default function CCGEN() {
         i++
       }
     }
-    // if date true and cvv true but cvv have a value that value will be an output
-    if(dateStats && cvvStats && form.cvv !== 0) {
+    // date true,cvv true, cvv = blank dan month = random, year not random
+    if(dateStats && cvvStats && form.cvv === 0 && form.month === 'random' & form.year !== 'random') {
       while ( i < form.quantity ){
-        setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${form.year}|${form.cvv}`])
+        setResults(results => [...results, `${BinValid(form.bin)}|${MonthRandom(month)}|${form.year}|${Cvv()}`])
         i++
       }
     }
+    // date true, cvv true, cvv = blank, month not random, year random
+    if(dateStats && cvvStats && form.cvv === 0 && form.month !== 'random' & form.year === 'random') {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${YearRandom(year)}|${Cvv()}`])
+        i++
+      }
+    }
+    // date true, cvv true, cvv = blank, month not random, year not random
     if(dateStats && cvvStats && form.cvv === 0 && form.month !== 'random' & form.year !== 'random') {
       while ( i < form.quantity ){
         setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${form.year}|${Cvv()}`])
         i++
       }
     }
+    // date true, cvv true, cvv = blank, month random, year random
     if(dateStats && cvvStats && form.cvv === 0 && form.month === 'random' & form.year === 'random') {
       while ( i < form.quantity ){
         setResults(results => [...results, `${BinValid(form.bin)}|${MonthRandom(month)}|${YearRandom(year)}|${Cvv()}`])
         i++
       }
     }
+    // date true, cvv true, cvv not random, month random, year random
+    if(dateStats && cvvStats && form.cvv !== 0 && form.month === 'random' & form.year === 'random') {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${MonthRandom(month)}|${YearRandom(year)}|${form.cvv}`])
+        i++
+      }
+    }
+    if(dateStats && cvvStats && form.cvv !== 0 && form.month !== 'random' & form.year !== 'random') {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${form.year}|${form.cvv}`])
+        i++
+      }
+    }
+    // date true cvv true, cvv not random, month not random, year random
+    if(dateStats && cvvStats && form.cvv !== 0 && form.month !== 'random' & form.year === 'random') {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${YearRandom(year)}|${form.cvv}`])
+        i++
+      }
+    }
+    // date true, cvv true, cvv not random, month random, year not random
+    if(dateStats && cvvStats && form.cvv !== 0 && form.month === 'random' & form.year !== 'random') {
+      while ( i < form.quantity ){
+        setResults(results => [...results, `${BinValid(form.bin)}|${MonthRandom(month)}|${form.year}|${form.cvv}`])
+        i++
+      }
+    }
 
-    if(dateStats && !cvvStats && form.month === 'random') {
+    // date true, cvv  false, month random, year not random
+    if(dateStats && !cvvStats && form.month === 'random' && form.year !== 'random') {
       while ( i < form.quantity ){
         setResults(results => [...results, `${BinValid(form.bin)}|${MonthRandom(month)}|${form.year}`])
         i++
       }
     }
-    if(dateStats && !cvvStats && form.year === 'random') {
+    // date true, cvv false, month not random, year random
+    if(dateStats && !cvvStats && form.month !== 'random' && form.year === 'random') {
       while ( i < form.quantity ){
         setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${YearRandom(year)}`])
         i++
       }
     }
+    // date true, cvv false, month random, year random
     if(dateStats && !cvvStats && form.month === 'random' && form.year === 'random') {
       while ( i < form.quantity ){
         setResults(results => [...results, `${BinValid(form.bin)}|${MonthRandom(month)}|${YearRandom(year)}`])
         i++
       }
     }
+    // date true, cvv false, month not random, year not random
     if(dateStats && !cvvStats && form.year !== 'random' && form.month !== 'random') {
       while ( i < form.quantity ){
         setResults(results => [...results, `${BinValid(form.bin)}|${form.month}|${form.year}`])
@@ -174,7 +213,7 @@ export default function CCGEN() {
 
       <fieldset className='field mt-14'>
         <legend className='legend'>Results</legend>
-        <div className='overflow-scroll h-28'>
+        <div className='overflow-scroll h-28 text-xs'>
           {results.map(list=> {
             return <p key={list}>{list}</p>
           })}
