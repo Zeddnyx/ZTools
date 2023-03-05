@@ -19,21 +19,21 @@
   @apply max-w-md mx-auto my-28 bg-mainBg
 }
 .heading-judul {
-  @apply font-bold text-xl text-center my-5 text-mainText
+  @apply font-bold font-pop text-3xl text-center mt-5 text-mainText
 }
 
 
 .boxTools {
-  @apply shadow-lg hover:shadow-xl font-pop text-mainText p-5 rounded outline-none w-full
+  @apply shadow-lg hover:shadow-xl font-pop text-mainText p-5 rounded outline-none w-full flex gap-3 items-center
 }
 .field {
-  @apply border-2 border-mainBtn p-1 rounded  w-full font-pop text-mainText w-full
+  @apply border-2 border-mainBtn p-1 rounded  w-full font-medium text-mainText w-full font-sans
 }
 .legend {
-  @apply text-mainText text-xs
+  @apply text-mainText text-xs px-2 font-sans uppercase
 }
 .input {
-  @apply bg-transparent outline-none w-full font-semibold text-mainText text-xs
+  @apply bg-transparent outline-none w-full text-mainText text-sm font-sans
 }
 .label {
   @apply font-bold text-mainText text-xs
@@ -42,7 +42,7 @@
   @apply border bg-transparent p-5  text-mainText 
 }
 .select {
-  @apply bg-mainBg outline-none w-full text-mainText text-xs
+  @apply bg-mainBg outline-none w-full text-mainText text-sm font-medium font-sans
 }
 .btn {
   @apply bg-mainBtn p-3 text-center w-full rounded-lg font-pop text-mainText mt-5 outline-none

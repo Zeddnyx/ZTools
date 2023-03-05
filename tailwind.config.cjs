@@ -10,9 +10,6 @@ module.exports = {
       fontFamily: {
         pop:  ['Poppins', 'sans-serif'],
       },
-      fontSize: {
-        sm: '18px',
-      },
       colors: {
         mainBg: '#3e4451',
         mainText: '#abb2bf',

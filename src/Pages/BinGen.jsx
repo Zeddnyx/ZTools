@@ -140,18 +140,16 @@ export default function CCGEN() {
        i++
       }
     }
-
-
   }
   // console.log('Contact me on telegram https://t.me/Zeddnyx')
 
   return <>
     <section className='section'>
-      <h1 className='heading-judul'>Bin Generator</h1>
-       <p className='my-5  text-center font-semibold text-mainText'>Generate random test credit card and card numbers fro testing, validation and verification purposes.</p>
+      <h1 className='heading-judul'>Generate CC</h1>
+       <p className='mb-5 text-center font-sans font-medium text-mainText'>Generate random test credit card and card numbers for testing, validation and verification purposes.</p>
       <form className='grid gap-2'>
         <fieldset className='field'>
-          <legend className='legend'>Bin</legend>
+          <legend className='legend'>BIN</legend>
           <input  className='input' required type="number" onChange={handleInput} name="bin" placeholder='454393' />
         </fieldset>
 
