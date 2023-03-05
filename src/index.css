@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .nav {
-  @apply flex justify-between px-5 py-4 items-center w-full bg-mainBg  font-pop  shadow-sm fixed top-0 left-0
+  @apply flex justify-between px-5 py-4 items-center w-full bg-mainBg  font-pop  shadow-xl fixed top-0 left-0
 }
 .logo {
   @apply font-bold text-xl text-mainText  outline-none
@@ -16,7 +16,7 @@
 }
 
 .section {
-  @apply max-w-md mx-auto my-20 bg-mainBg
+  @apply max-w-md mx-auto my-28 bg-mainBg
 }
 .heading-judul {
   @apply font-bold text-xl text-center my-5 text-mainText
@@ -24,10 +24,10 @@
 
 
 .boxTools {
-  @apply border-2 font-pop text-mainText p-5 rounded outline-none w-full
+  @apply shadow-lg hover:shadow-xl font-pop text-mainText p-5 rounded outline-none w-full
 }
 .field {
-  @apply border-2 p-1 rounded  w-full font-pop text-mainText
+  @apply border-2 border-mainBtn p-1 rounded  w-full font-pop text-mainText
 }
 .legend {
   @apply px-1 text-mainText
