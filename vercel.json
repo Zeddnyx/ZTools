@@ -1,7 +1,3 @@
 {
-  "rewrites": [
-    {
-      "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
-    }
-  ]
+  "routes": [{ "src": "/[^.]+", "dest": "/", "status": 200 }]
 }
