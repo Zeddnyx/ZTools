@@ -51,7 +51,7 @@
   @apply bg-mainBg outline-none w-full text-mainText text-sm font-medium font-sans
 }
 .btn {
-  @apply bg-mainBtn p-3 text-center w-full rounded-lg font-pop text-mainText mt-5 outline-none hover:bg-btnHover
+  @apply bg-mainBtn p-3 text-center w-full rounded-lg font-pop text-mainBg mt-5 outline-none hover:bg-btnHover
 }
 .textarea {
   @apply h-40 bg-transparent rounded outline-none font-medium text-mainText text-xs
