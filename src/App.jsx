@@ -12,7 +12,7 @@ function App() {
     console.log('Om mau ngapain om?')
     setTimeout(() => {
       console.log('Om jangan om!')
-   }, 8000);
+   }, 10000);
   }
 
   jokes()
