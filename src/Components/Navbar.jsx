@@ -29,10 +29,13 @@ export default function Nav() {
 
   return <nav className='nav'>
     <button className='logo'>
-      <Link to='/'>Logo</Link>
+      <Link to='/'>ZTools</Link>
     </button>
 
-    <a href="https://github.com/Zeddnyx" className='git'><BsGithub size='25' /></a>
+    <div className='flex gap-5 items-center'>
+      <button className='git'><Link to='about'>Me</Link></button>
+      <button className='git'><a href="https://github.com/Zeddnyx"><BsGithub size='20' /></a></button>
+    </div>
   </nav>
 }
 

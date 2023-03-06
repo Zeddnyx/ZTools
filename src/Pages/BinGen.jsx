@@ -141,7 +141,6 @@ export default function CCGEN() {
       }
     }
   }
-  // console.log('Contact me on telegram https://t.me/Zeddnyx')
 
   return <>
     <section className='section'>
@@ -197,15 +196,6 @@ export default function CCGEN() {
           </fieldset>
         </div>
 
-        <fieldset className='field'>
-          <legend className='legend'>Format</legend>
-          <select onChange={handleInput} className='select' name="type">
-            <option value="pipe">PIPE</option>
-            <option value="json">JSON</option>
-            <option value="csv">CSV</option>
-          </select>
-        </fieldset>
-        
         <button onClick={handleClick} className='btn' type="submit">Generate</button>
       </form>
 

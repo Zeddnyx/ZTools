@@ -11,9 +11,10 @@ module.exports = {
         pop:  ['Poppins', 'sans-serif'],
       },
       colors: {
-        mainBg: '#3e4451',
-        mainText: '#abb2bf',
-        mainBtn: '#282c34'
+        mainBg: '#eee',
+        mainText: '#555555',
+        mainBtn: '#376ae7',
+        btnHover: '#3066e2',
       },
     },
   },

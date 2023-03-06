@@ -38,22 +38,22 @@ const [bank, setBank] = useState('')
 
   let content;
     if (info) {
-    content =  <div className='p-2 bg-blue-100 my-5 rounded'>
+    content =  <div className='p-2 bg-mainBtn my-5 rounded'>
       <p className='text-green-500 mb-2 text-xs font-semibold'>Success !</p>
       <div>
-        <h4 className='font-bold'>Bank/E-Wallet : {info[0].accountBank}</h4>
-        <h4 className='font-bold'>Name : {info[0].accountName}</h4>
-        <h4 className='font-bold'>Rek/Number : {info[0].accountNumber}</h4>
+        <h4 className='font-bold text-mainBg'>Bank/E-Wallet : {info[0].accountBank}</h4>
+        <h4 className='font-bold text-mainBg'>Name : {info[0].accountName}</h4>
+        <h4 className='font-bold text-mainBg'>Rek/Number : {info[0].accountNumber}</h4>
       </div>
     </div>
   }
   if (info == undefined) {
-    content =  <div className='p-2 bg-mainBgDark dark:bg-mainBg my-5 rounded'>
-      <p className='text-red-500 my-2 text-xs'>Data not found !</p>
+    content =  <div className='p-2 bg-mainBtn dark:bg-mainBg my-5 rounded'>
+      <p className='text-red-500 font-semibold my-2 text-xs'>Data not found !</p>
     </div>
   }
   if (load) {
-    const loading = 'animate-bounce w-8 h-8 border-2 rounded-full mx-auto my-5 border-mainBgDark dark:border-mainBg'
+    const loading = 'animate-bounce w-8 h-8 border-2 rounded-full mx-auto my-5 border-mainBtn'
     content = <div className={loading}></div>
   }
   if (error) {
@@ -70,13 +70,13 @@ const [bank, setBank] = useState('')
     <section className='section'>
       <h1 className='heading-judul'>Check Rekening</h1>
 
-      <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-5 mt-28'>
         <fieldset className='field'>
           <legend className='legend'>Rekening</legend>
           <select className='select'  onChange={e  => setBank(e.target.value)} name="list">
             {list.map( list => {
               return <option key={list} value={list}>{list}</option>
-             })}
+            })}
           </select>
         </fieldset>
            
