@@ -1,24 +1,9 @@
 {
   "rewrites": [
-    {
-      "src": "/",
-      "dest": "/"
-    },
-    {
-      "src": "/check-rek",
-      "dest": "/"
-    },
-    {
-      "src": "/bin-generator",
-      "dest": "/"
-    },
-    {
-      "src": "/send-wa",
-      "dest": "/"
-    },
-    {
-      "src": "/about",
-      "dest": "/"
-    },
+    {"source": "/", "destination": "/" },
+    {"source": "/check-rek", "destination": "/"},
+    {"source": "/bin-generator", "destination": "/"},
+    {"source": "/send-wa", "destination": "/"},
+    {"source": "/about", "destination": "/"},
   ]
 }
