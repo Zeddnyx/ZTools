@@ -25,6 +25,13 @@ export default function Home() {
           <h1>Send Whatsapp</h1>
         </button>
       </Link>
+
+      <Link to='randomuser'>
+        <button className='boxTools'>
+          <span className='iconTools'><AiOutlineWhatsApp /></span>
+          <h1>Generate Random User</h1>
+        </button>
+      </Link>
     </section>
   </>
 }

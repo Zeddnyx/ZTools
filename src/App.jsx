@@ -6,6 +6,7 @@ import CCGEN from './Pages/BinGen'
 import SendWa from './Pages/SendWa'
 import NotFound from './Pages/NotFound'
 import About from './Pages/About'
+import RandomUser from './Pages/RandomUser'
 
 function App() {
   const jokes = () => {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/bin-generator' element={<CCGEN />} />
         <Route path='/send-wa' element={<SendWa />} />
         <Route path='/about' element={<About />} />
+        <Route path='/randomuser' element={<RandomUser />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>

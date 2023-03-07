@@ -33,7 +33,7 @@ export default function Nav() {
     </button>
 
     <div className='flex gap-5 items-center'>
-      <button className='git'><Link to='about'>Me</Link></button>
+      <button className='git'><Link to='about'>About</Link></button>
       <button className='git'><a href="https://github.com/Zeddnyx"><BsGithub size='20' /></a></button>
     </div>
   </nav>
