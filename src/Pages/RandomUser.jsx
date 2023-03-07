@@ -3,7 +3,6 @@ import Card from '../Components/RandomUser/Card'
 
 export default function RandomUser() {
   const [datas, setDatas] = useState([])
-  const [quantity, setQuantity] = useState(5)
 
   const user = async () => {
     const data = await fetch('https://randomuser.me/api/')
@@ -11,7 +10,6 @@ export default function RandomUser() {
       const json = await data.json()
       // if just like this setDatas(json.results[0]) will be error datas is not func
       setDatas([json.results[0]])
-      console.log(datas)
     } catch (err) {
       console.log(err)
     }
@@ -20,24 +18,21 @@ export default function RandomUser() {
     user()
   }, [])
 
-  const handle = e => e.preventDefault()
-  const change = e => setQuantity(e.target.value)
+  const handle = e => {
+    e.preventDefault()
+    user()
+  }
 
   return <section className='section'>
-    <h1 className='heading-judul'>Generate random user</h1>
+    <h1 className='heading-judul'>Generate Random Dummy User Data</h1>
+    <p className='text-center'>These random users, are generated from the API of <a className='text-mainBtn' href="https://randomuser.me">randomuser.me</a></p>
     <div className='mt-20'>
       <div className='mb-10'>
-        <fieldset className='field'>
-          <legend className='legend'>quantity</legend>
-          <input className='input' type="number" onChange={change} name="quantity" placeholder='5' />
-        </fieldset>
         <button className='btn' onClick={handle} type="submit">Generate</button>
       </div>
 
-
-
       { datas?.length === 0
-        ? <p>Loading ...</p>
+        ? <p className='animate-bounce w-8 h-8 border-2 rounded-full mx-auto my-5 border-mainBtn'></p>
         : datas.map((data,id) => {
           return <div key={id}>
             <Card user={data} />

@@ -17,10 +17,10 @@
 
 
 .boxTools {
-  @apply aspect-square font-pop text-mainBg text-center bg-mainBtn hover:bg-btnHover p-5 rounded outline-none w-full flex gap-2 items-center
+  @apply h-28 w-52 font-pop text-mainBg text-center bg-mainBtn hover:bg-btnHover px-2 py-5 rounded outline-none w-full flex gap-2 items-center flex justify-center
 }
-.iconsTools {
-  @apply text-mainBg
+.textTools {
+  @apply col-span-3 md:font-bold md:text-lg
 }
 
 

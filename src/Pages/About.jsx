@@ -17,7 +17,7 @@ export default function About(){
 
     <p>If you have any suggestions, questions or any request please send it to <span className='text-mainBtn'>zeddnyx08@gmail.com</span></p>
 
-    <div className='absolute bottom-5 text-center w-full'>
+    <div className='absolute bottom-5 left-0 text-center w-full'>
       <p>Get in close with me</p>
       <ul className='flex gap-5 justify-center mt-2 text-mainBtn'>
         <li><a href=""><FaTelegramPlane size='25' /></a></li>
