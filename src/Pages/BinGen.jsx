@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { BinValid } from '../Components/BinGen/BinValidator'
 import { MonthRandom, YearRandom } from '../Components/BinGen/DateValid'
 import { Cvv } from '../Components/BinGen/CvvRandom'
-import { FaCopy } from 'react-icons/fa'
+import BtnCopy from '../Components/BtnCopy'
 
 export default function CCGEN() {
   const [month, setMonth] = useState(
@@ -143,16 +143,6 @@ export default function CCGEN() {
        setResults(results => [...results, BinValid(form.bin)])
        i++
       }
-      setText(results.toString())
-      console.log(results)
-    }
-  }
-  const copy = async () => {
-    try {
-      await navigator.clipboard.writeText(text)
-      alert('copied!')
-    } catch (err) {
-      alert(err)
     }
   }
 
@@ -220,9 +210,7 @@ export default function CCGEN() {
             return <p key={list}>{list}</p>
           })}
         </div>
-        <button className='text-mainBtn outline-none p-1 flex justify-end col-end-4' onClick={copy}>
-          <span><FaCopy /></span>
-        </button>
+        <BtnCopy textCopy={results} className='text-mainBtn outline-none p-1 flex justify-end col-end-4' />
       </fieldset>
     </section>
   </>
