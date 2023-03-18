@@ -32,6 +32,13 @@ export default function Home() {
           <h1 className='textTools'>Generate Random User</h1>
         </button>
       </Link>
+
+      <Link to='pwgen'>
+        <button className='boxTools'>
+          <span ><AiOutlineUserAdd /></span>
+          <h1 className='textTools'>Pw Generator</h1>
+        </button>
+      </Link>
     </section>
   </>
 }

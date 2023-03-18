@@ -7,6 +7,7 @@ import SendWa from './Pages/SendWa'
 import NotFound from './Pages/NotFound'
 import About from './Pages/About'
 import RandomUser from './Pages/RandomUser'
+import PwGen from './Pages/PwGenerator'
 
 function App() {
   const jokes = () => {
@@ -32,6 +33,7 @@ function App() {
         <Route path='/send-wa' element={<SendWa />} />
         <Route path='/about' element={<About />} />
         <Route path='/randomuser' element={<RandomUser />} />
+        <Route path='/pwgen' element={<PwGen />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
