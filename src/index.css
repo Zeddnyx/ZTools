@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global */
+
+.btn-blue {
+  @apply bg-mainBtn p-1 text-center rounded-lg font-pop text-mainBg outline-none 
+}
+.btn-red {
+  @apply bg-red-500 p-1 text-center rounded-lg font-pop text-mainBg outline-none
+}
+
+/* navbar */
 .nav {
   @apply flex justify-between px-5 py-4 items-center w-full bg-mainBtn  font-pop  shadow-xl fixed top-0 left-0 font-pop
 }

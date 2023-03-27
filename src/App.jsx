@@ -8,6 +8,7 @@ import NotFound from './Pages/NotFound'
 import About from './Pages/About'
 import RandomUser from './Pages/RandomUser'
 import PwGen from './Pages/PwGenerator'
+import Todo from './Pages/TodoList'
 
 function App() {
   const jokes = () => {
@@ -34,6 +35,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/randomuser' element={<RandomUser />} />
         <Route path='/pwgen' element={<PwGen />} />
+        <Route path='/todolist' element={<Todo />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
