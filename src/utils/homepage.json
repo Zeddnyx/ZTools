@@ -1,0 +1,26 @@
+[
+  {
+    "id": "check-rek",
+    "title":"Check Rekening"
+  },
+  {
+    "id": "bin-generator",
+    "title":"CC Numbers Generator"
+  },
+  {
+    "id": "send-wa",
+    "title":"Send Whatsapp"
+  },
+  {
+    "id": "randomuser",
+    "title":"Random User"
+  },
+  {
+    "id": "pwgen",
+    "title":"Random Password"
+  },
+  {
+    "id": "todolist",
+    "title":"Todo List"
+  }
+]

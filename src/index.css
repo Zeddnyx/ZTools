@@ -5,66 +5,61 @@
 /* Global */
 
 .btn-blue {
-  @apply bg-mainBtn p-1 text-center rounded-lg font-pop text-mainBg outline-none 
+  @apply bg-mainBtn p-1 text-center rounded-lg font-pop text-mainBg outline-none;
 }
 .btn-red {
-  @apply bg-red-500 p-1 text-center rounded-lg font-pop text-mainBg outline-none
+  @apply bg-red-500 p-1 text-center rounded-lg font-pop text-mainBg outline-none;
 }
 
 /* navbar */
 .nav {
-  @apply flex justify-between px-5 py-4 items-center w-full bg-mainBtn  font-pop  shadow-xl fixed top-0 left-0 font-pop
+  @apply flex justify-between px-5 py-4 items-center w-full bg-mainBtn  font-pop  shadow-xl fixed top-0 left-0 font-pop;
 }
 .logo {
-  @apply  text-xl text-mainBg  outline-none
+  @apply text-xl text-mainBg  outline-none;
 }
 .theme {
-  @apply md:hidden text-mainText  outline-none
+  @apply md:hidden text-mainText  outline-none;
 }
 .git {
-  @apply text-mainBg text-xl
+  @apply text-mainBg text-xl;
 }
-
 
 .boxTools {
-  @apply h-28 w-52 font-pop text-mainBg text-center bg-mainBtn hover:bg-btnHover px-2 py-5 rounded outline-none w-full flex gap-2 items-center flex justify-center
+  @apply h-28 w-52 font-pop text-mainBg text-center bg-mainBtn hover:bg-btnHover px-2 py-5 rounded outline-none w-full flex gap-2 items-center flex justify-center;
 }
 .textTools {
-  @apply col-span-3 md:font-bold md:text-lg
+  @apply col-span-3 md:font-bold md:text-lg;
 }
-
 
 .section {
-  @apply max-w-md mx-auto my-28 bg-mainBg
+  @apply max-w-md mx-auto my-28 bg-mainBg;
 }
 .heading-judul {
-  @apply font-bold font-pop text-3xl text-center mt-5 text-mainBtn
+  @apply font-bold font-pop text-3xl text-center mt-5 text-mainBtn;
 }
-
 
 .field {
-  @apply border-2 border-mainBtn p-1 rounded  w-full font-medium text-mainText w-full font-sans px-2
+  @apply border-2 border-mainBtn p-1 rounded  w-full font-medium text-mainText w-full font-sans px-2;
 }
 .legend {
-  @apply text-mainText text-xs px-2 font-sans uppercase
+  @apply text-mainText text-xs px-2 font-sans uppercase;
 }
 .input {
-  @apply bg-transparent outline-none w-full text-mainText text-sm font-sans
+  @apply bg-transparent outline-none w-full text-mainText text-sm font-sans;
 }
 .label {
-  @apply font-bold text-mainText text-xs
+  @apply font-bold text-mainText text-xs;
 }
 .check {
-  @apply border bg-transparent p-5  text-mainText 
+  @apply border bg-transparent p-5  text-mainText;
 }
 .select {
-  @apply bg-mainBg outline-none w-full text-mainText text-sm font-medium font-sans
+  @apply bg-mainBg outline-none w-full text-mainText text-sm font-medium font-sans;
 }
 .btn {
-  @apply bg-mainBtn p-3 text-center w-full rounded-lg font-pop text-mainBg mt-5 outline-none hover:bg-btnHover
+  @apply bg-mainBtn p-3 text-center w-full rounded-lg font-pop text-mainBg mt-5 outline-none hover:bg-btnHover;
 }
 .textarea {
-  @apply h-40 bg-transparent rounded outline-none font-medium text-mainText text-xs
+  @apply h-40 bg-transparent rounded outline-none font-medium text-mainText text-xs;
 }
-
-
