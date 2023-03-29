@@ -1,22 +1,23 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Card from '../Components/RandomUser/Card';
+import Loading from '../Components/Loading';
 
 export default function RandomUser() {
   const [datas, setDatas] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const user = async () => {
+    setLoading(true);
     const data = await fetch('https://randomuser.me/api/');
     try {
       const json = await data.json();
       // if just like this setDatas(json.results[0]) will be error datas is not func
       setDatas([json.results[0]]);
+      setLoading(false);
     } catch (err) {
       console.log(err);
     }
   };
-  useEffect(() => {
-    user();
-  }, []);
 
   const handle = (e) => {
     e.preventDefault();
@@ -39,8 +40,8 @@ export default function RandomUser() {
           </button>
         </div>
 
-        {datas?.length === 0 ? (
-          <p className="animate-bounce w-8 h-8 border-2 rounded-full mx-auto my-5 border-mainBtn"></p>
+        {loading ? (
+          <Loading />
         ) : (
           datas.map((data, id) => {
             return (

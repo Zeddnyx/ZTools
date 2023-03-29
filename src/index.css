@@ -5,10 +5,10 @@
 /* Global */
 
 .btn-blue {
-  @apply bg-mainBtn p-1 text-center rounded-lg font-pop text-mainBg outline-none;
+  @apply bg-mainBtn hover:bg-btnHover p-1 text-center rounded-lg font-pop text-mainBg outline-none;
 }
 .btn-red {
-  @apply bg-red-500 p-1 text-center rounded-lg font-pop text-mainBg outline-none;
+  @apply bg-red-500 hover:bg-red-600 p-1 text-center rounded-lg font-pop text-mainBg outline-none;
 }
 
 /* navbar */
@@ -25,13 +25,17 @@
   @apply text-mainBg text-xl;
 }
 
+/* homepage */
 .boxTools {
-  @apply h-28 w-52 font-pop text-mainBg text-center bg-mainBtn hover:bg-btnHover px-2 py-5 rounded outline-none w-full flex gap-2 items-center flex justify-center;
+  @apply h-28 font-pop text-mainBg text-center transition-all delay-75 bg-mainBtn hover:bg-btnHover px-2 py-5 rounded outline-none w-full flex gap-2 items-center flex justify-center;
 }
 .textTools {
   @apply col-span-3 md:font-bold md:text-lg;
 }
 
+
+
+/* Form */
 .section {
   @apply max-w-md mx-auto my-28 bg-mainBg;
 }
@@ -58,7 +62,7 @@
   @apply bg-mainBg outline-none w-full text-mainText text-sm font-medium font-sans;
 }
 .btn {
-  @apply bg-mainBtn p-3 text-center w-full rounded-lg font-pop text-mainBg mt-5 outline-none hover:bg-btnHover;
+  @apply bg-mainBtn transition-all delay-75 p-3 text-center w-full rounded-lg font-pop text-mainBg mt-5 outline-none hover:bg-btnHover;
 }
 .textarea {
   @apply h-40 bg-transparent rounded outline-none font-medium text-mainText text-xs;

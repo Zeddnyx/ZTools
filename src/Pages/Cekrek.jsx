@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Loading from '../Components/Loading';
 
 export default function Cekrek() {
   const [bank, setBank] = useState('');
@@ -86,12 +87,14 @@ export default function Cekrek() {
     );
   }
   if (load) {
-    const loading =
-      'animate-bounce w-8 h-8 border-2 rounded-full mx-auto my-5 border-mainBtn';
-    content = <div className={loading}></div>;
+    content = (
+      <div className='mt-5'>
+        <Loading />
+      </div>
+    );
   }
   if (error) {
-    content = <p className="">{error}</p>;
+    content = <p className="text-center mt-5 text-red-500">{error}</p>;
   }
 
   const handleSubmit = (e) => {

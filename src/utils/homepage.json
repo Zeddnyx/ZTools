@@ -22,5 +22,9 @@
   {
     "id": "todolist",
     "title":"Todo List"
+  },
+  {
+    "id": "quake",
+    "title": "Earth Quake"
   }
 ]

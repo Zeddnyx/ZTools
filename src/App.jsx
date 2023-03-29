@@ -9,6 +9,7 @@ import About from './Pages/About';
 import RandomUser from './Pages/RandomUser';
 import PwGen from './Pages/PwGenerator';
 import Todo from './Pages/TodoList';
+import EarthQuake from './Pages/EarthQuake';
 
 function App() {
   const jokes = () => {
@@ -37,6 +38,7 @@ function App() {
             <Route path="/randomuser" element={<RandomUser />} />
             <Route path="/pwgen" element={<PwGen />} />
             <Route path="/todolist" element={<Todo />} />
+            <Route path="/quake" element={<EarthQuake />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
