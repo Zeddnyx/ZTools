@@ -54,3 +54,23 @@
   @apply w-full border border-dark2 capitalize p-5 rounded-md flex justify-center items-center gap-4
   hover:bg-dark1
 }
+
+/* calculator */
+.calculator {
+  @apply bg-dark1 w-full
+}
+.result {
+  @apply bg-dark2 p-2
+}
+.keypad {
+  @apply grid grid-cols-4 gap-4 p-1
+}
+.btn-calc {
+  @apply bg-dark2 p-1
+}
+.btn-calc-del {
+  @apply bg-red
+}
+.btn-calc-clear {
+  @apply bg-yellow
+}
