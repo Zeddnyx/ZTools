@@ -1,40 +1,15 @@
 "use client";
-import React, { useState } from "react";
-import { earthQuake } from "@/services/service";
 
-interface IProps {
-  data: {
-    tangal: string;
-    jam: string;
-    datetime: string;
-    coordinates: string;
-    lintang: string;
-    bujur: string;
-    magnitude: string;
-    kedalaman: string;
-    wilayah: string;
-    potensi: string;
-    dirasakan: string;
-    shakemap: string;
-  };
-}
+import Loading from "@/app/loading";
+import { fetchEarthQuake } from "@/services/queryFetch";
 
 export default function page() {
-  const [data, setData] = useState<IProps["data"]>();
-  const [isLoading, setIsLoading] = useState();
+  const { datas, isInitialLoading, refetch } = fetchEarthQuake();
 
   const handleClick = () => {
-    setIsLoading(true);
-    earthQuake()
-      .then((res) => {
-        setData(res.data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.log("earthQuake err", err);
-        setIsLoading(false);
-      });
+    refetch();
   };
+
   return (
     <div className="flexCenterMargin">
       <div>
@@ -50,20 +25,21 @@ export default function page() {
       <button onClick={handleClick} className="btn h-10">
         Track
       </button>
-      {data && (
+      {isInitialLoading && <Loading />}
+      {datas && (
         <div className="text-center space-y-2">
-          {/* <p>{data?.tangal}</p> */}
-          <p>{data?.jam}</p>
-          <p>{data?.datetime}</p>
-          {/* <p>{data?.coordinates}</p> */}
-          {/* <p>{data?.lintang}</p> */}
-          {/* <p>{data?.bujur}</p> */}
-          <p>Magnitude {data?.magnitude}</p>
-          <p>Kedalaman {data?.kedalaman}</p>
-          <p>{data?.wilayah}</p>
-          <p>{data?.potensi}</p>
-          <p>{data?.dirasakan}</p>
-          <img src={data?.shakemap} alt={data?.shakemap} />
+          {/* <p>{datas?.tangal}</p> */}
+          <p>{datas?.jam}</p>
+          <p>{datas?.datetime}</p>
+          {/* <p>{datas?.coordinates}</p> */}
+          {/* <p>{datas?.lintang}</p> */}
+          {/* <p>{datas?.bujur}</p> */}
+          <p>Magnitude {datas?.magnitude}</p>
+          <p>Kedalaman {datas?.kedalaman}</p>
+          <p>{datas?.wilayah}</p>
+          <p>{datas?.potensi}</p>
+          <p>{datas?.dirasakan}</p>
+          <img src={datas?.shakemap} alt={datas?.shakemap} />
         </div>
       )}
     </div>

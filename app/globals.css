@@ -45,6 +45,15 @@
 .btn {
   @apply bg-light1 rounded w-full md:w-80 text-dark0
 }
+.btn-normal {
+  @apply bg-light1 rounded px-2 py-4 h-full w-28
+}
+.btn-delete {
+  @apply bg-red rounded w-full px-5
+}
+.btn-edit {
+  @apply bg-yellow rounded w-full px-5
+}
 
 /* homepage */
 .container-box {

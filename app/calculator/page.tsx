@@ -26,18 +26,22 @@ export default function Home() {
 
   return (
     <div className="flexCenterMargin">
+      <div>
+        <h1>Calculator Tool: Perform Basic Math Operations <span className="text-aqua">Quickly and Easily</span></h1>
+        <p className="descCenter">This tool performs basic math operations quickly and easily. It's useful for anyone who needs to perform quick calculations without having to use a physical calculator.</p>
+      </div>
       <div className="calculator">
         <div className="result">
           <input type="text" value={result} readOnly />
         </div>
 
         <div className="keypad">
-            <button className="btn-calc-clear" onClick={handleClear} id="clear">
-              Clear
-            </button>
-            <span></span>
-            <span></span>
-            <span></span>
+          <button className="btn-calc-clear" onClick={handleClear} id="clear">
+            Clear
+          </button>
+          <span></span>
+          <span></span>
+          <span></span>
           <button className="btn-calc" name="1" onClick={handleClick}>
             1
           </button>
@@ -68,7 +72,7 @@ export default function Home() {
           <button className="btn-calc" name="0" onClick={handleClick}>
             0
           </button>
-            <button className="btn-calc-del" onClick={handleDelete}>Del</button>
+          <button className="btn-calc-del" onClick={handleDelete}>Del</button>
           <button className="btn-calc" name="+" onClick={handleClick}>
             +
           </button>
