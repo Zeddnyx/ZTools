@@ -24,12 +24,12 @@ export const useStore = create(
       },
       deleteTodos: (id: number) => {
         set((state: any) => ({
-          todos: state.todos.filter((todo) => todo.id !== id),
+          todos: state.todos.filter((todo: Todo) => todo?.id !== id),
         }));
       },
       editTodos: (id: number, newTitle: string) => {
         set((state: any) => ({
-          todos: state.todos.map((todo: any) =>
+          todos: state.todos.map((todo: Todo) =>
             todo.id === id ? { ...todo, title: newTitle } : todo
           ),
         }));
