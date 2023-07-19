@@ -40,7 +40,7 @@
   @apply flex flex-col justify-center items-center my-10 gap-10 w-full px-10 max-w-4xl mx-auto
 }
 .descCenter {
-  @apply text-center flex justify-center 
+  @apply text-center flex justify-center mt-2
 }
 .btn {
   @apply bg-light1 rounded w-full md:w-80 text-dark0
@@ -66,20 +66,23 @@
 
 /* calculator */
 .calculator {
-  @apply bg-dark1 w-full
+  @apply w-full max-w-lg
 }
 .result {
-  @apply bg-dark2 p-2
+  @apply bg-dark2 p-2 rounded-full text-end
+}
+.result-input {
+  @apply text-end px-2 font-bold
 }
 .keypad {
-  @apply grid grid-cols-4 gap-4 p-1
+  @apply grid grid-cols-4 gap-4 p-2 font-bold
 }
 .btn-calc {
-  @apply bg-dark2 p-1
+  @apply bg-dark2 p-1 rounded-full
 }
 .btn-calc-del {
-  @apply bg-red
+  @apply bg-red rounded-full
 }
 .btn-calc-clear {
-  @apply bg-yellow
+  @apply bg-yellow rounded-full mt-3
 }

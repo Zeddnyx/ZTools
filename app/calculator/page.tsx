@@ -32,7 +32,7 @@ export default function Home() {
       </div>
       <div className="calculator">
         <div className="result">
-          <input type="text" value={result} readOnly />
+          <input className="result-input" type="text" value={result} readOnly />
         </div>
 
         <div className="keypad">
@@ -51,6 +51,9 @@ export default function Home() {
           <button className="btn-calc" name="3" onClick={handleClick}>
             3
           </button>
+          <button className="btn-calc" name="+" onClick={handleClick}>
+            +
+          </button>
           <button className="btn-calc" name="4" onClick={handleClick}>
             4
           </button>
@@ -59,6 +62,9 @@ export default function Home() {
           </button>
           <button className="btn-calc" name="6" onClick={handleClick}>
             6
+          </button>
+          <button className="btn-calc" name="-" onClick={handleClick}>
+            -
           </button>
           <button className="btn-calc" name="7" onClick={handleClick}>
             7
@@ -69,24 +75,18 @@ export default function Home() {
           <button className="btn-calc" name="9" onClick={handleClick}>
             9
           </button>
+          <button className="btn-calc" name="*" onClick={handleClick}>
+            *
+          </button>
           <button className="btn-calc" name="0" onClick={handleClick}>
             0
           </button>
           <button className="btn-calc-del" onClick={handleDelete}>Del</button>
-          <button className="btn-calc" name="+" onClick={handleClick}>
-            +
-          </button>
-          <button className="btn-calc" name="-" onClick={handleClick}>
-            -
-          </button>
-          <button className="btn-calc" name="*" onClick={handleClick}>
-            *
+          <button className="btn-calc" onClick={calculate} id="equal">
+            =
           </button>
           <button className="btn-calc" name="/" onClick={handleClick}>
             /
-          </button>
-          <button className="btn-calc" onClick={calculate} id="equal">
-            =
           </button>
         </div>
       </div>
