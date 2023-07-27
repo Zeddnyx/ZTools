@@ -15,7 +15,7 @@ export default function page() {
     e.preventDefault();
 
     const pw = `${symbole}${lower}${upper}${number}`;
-    for (let i = 0; i < length; i++) {
+    for (let i = 0; i < 5; i++) {
       const generate = pw[~~(Math.random() * pw.length)];
       setResults((results: any) =>
         [...results, generate].toString().replace(/,/g, "")

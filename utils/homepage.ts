@@ -5,7 +5,7 @@ import {PiWhatsappLogoLight} from "react-icons/pi"
 import {AiFillCalculator} from "react-icons/ai"
 import { WiEarthquake } from "react-icons/wi"
 import { FiUser } from "react-icons/fi"
-import {MdPassword} from "react-icons/md"
+import {MdPassword, MdColorLens} from "react-icons/md"
 
 interface Homepage {
   title: string;
@@ -20,6 +20,11 @@ export const homepage: Homepage[] = [
     icon: RiPhoneFindFill,
   },
   {
+    title: "todo list",
+    link: "/todo-list",
+    icon: BsClipboardCheck
+  },
+  {
     title: "cc number generator",
     link: "/cc-number-generator",
     icon: BsCreditCard2Front,
@@ -28,11 +33,6 @@ export const homepage: Homepage[] = [
     title: "send whatsapp",
     link: "/send-whatsapp",
     icon: PiWhatsappLogoLight,
-  },
-  {
-    title: "todo list",
-    link: "/todo-list",
-    icon: BsClipboardCheck
   },
   {
     title: "calculator",
@@ -53,5 +53,10 @@ export const homepage: Homepage[] = [
     title: "password generator",
     link: "/password-generator",
     icon: MdPassword
+  },
+  {
+    title: "color generator",
+    link: "/color-generator",
+    icon: MdColorLens
   }
 ]

@@ -15,6 +15,15 @@
   h2 {
     @apply text-xl md:text-3xl font-bold leading-tight text-center;
   }
+  h3 {
+    @apply text-lg md:text-2xl font-bold leading-tight
+  }
+  h4 {
+    @apply text-base md:text-xl font-bold leading-tight
+  }
+  h5 {
+    @apply text-sm md:text-base font-bold leading-tight
+  }
   fieldset {
   @apply border-2 border-light1 p-1 rounded w-full w-full  text-start;
   }
