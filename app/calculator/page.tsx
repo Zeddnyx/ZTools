@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import { FaDeleteLeft } from "react-icons/fa";
 
 export default function Home() {
   const [result, setResult] = useState("");
