@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { FaDeleteLeft } from "react-icons/fa";
 
 export default function Home() {
   const [result, setResult] = useState("");
@@ -37,7 +38,7 @@ export default function Home() {
 
         <div className="keypad">
           <button className="btn-calc-clear" onClick={handleClear} id="clear">
-            Clear
+            C
           </button>
           <span></span>
           <span></span>
@@ -78,10 +79,10 @@ export default function Home() {
           <button className="btn-calc" name="*" onClick={handleClick}>
             *
           </button>
+          <button className="btn-calc-del" onClick={handleDelete}>DEL</button>
           <button className="btn-calc" name="0" onClick={handleClick}>
             0
           </button>
-          <button className="btn-calc-del" onClick={handleDelete}>Del</button>
           <button className="btn-calc" onClick={calculate} id="equal">
             =
           </button>
