@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, Fragment } from "react";
+import React, { useState} from "react";
 import { shallow } from "zustand/shallow";
 import { useStore } from "@/store/stateManagement";
 import Input from "@/components/Input";
@@ -27,7 +27,7 @@ const TodoList = () => {
 
   return (
     <div className="flexCenterMargin">
-      <div className="flex items-center gap-2 w-full">
+      <div className="flex flex-col items-center gap-2 w-full">
         <Input
           name="Todo List"
           placeholder="add todo"
@@ -42,20 +42,20 @@ const TodoList = () => {
       <ul className="w-full">
         {todos.map((todo: any) => (
           <li key={todo.id} className="flex gap-5 w-full">
-            {/* {editId === todo.id ? ( */}
-            {/*     <li className="flex items-center w-full gap-2"> */}
-            {/*       <Input */}
-            {/*         name="Edit Todo" */}
-            {/*         placeholder="Edit Todo" */}
-            {/*         type="text" */}
-            {/*         value={editTitle} */}
-            {/*         onChange={(e) => setEditTitle(e.target.value)} */}
-            {/*       /> */}
-            {/*       <button onClick={handleUpdate} className="btn-normal"> */}
-            {/*         Update */}
-            {/*       </button> */}
-            {/*     </li> */}
-            {/* ) : ( */}
+            {editId === todo.id ? (
+                <li className="flex flex-col items-center w-full gap-2">
+                  <Input
+                    name="Edit Todo"
+                    placeholder="Edit Todo"
+                    type="text"
+                    value={editTitle}
+                    onChange={(e) => setEditTitle(e.target.value)}
+                  />
+                  <button onClick={handleUpdate} className="btn-normal">
+                    Update
+                  </button>
+                </li>
+            ) : (
                 <div className="mt-2 w-full flex gap-16 my-2 bg-dark1 p-2 justify-between items-center">
                   <p>{todo.title}</p>
                   <div className="flex gap-3 items-center">
@@ -74,7 +74,7 @@ const TodoList = () => {
                   </div>
                 </div>
 
-            {/* )} */}
+            )}
           </li>
         ))}
       </ul>

@@ -1,4 +1,4 @@
-import { homepage } from "@/utils/homepage";
+import { feature } from "@/utils/feature";
 import Link from "next/link";
 import React from "react";
 
@@ -6,7 +6,7 @@ export default function Homepage() {
   return (
     <section>
       <div className="container-box">
-        {homepage.map((item, id) => (
+        {feature.map((item, id) => (
           <Link key={id} href={item.link}>
             <div className="box-tools">
               <span className="text-light1">

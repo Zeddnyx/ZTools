@@ -10,7 +10,7 @@ export default function page() {
         <h2>send whatsapp message without save number</h2>
         <p className="descCenter">Just simply put number and you ready to go</p>
       </div>
-      <form className="w-full h-full flex flex-col md:flex-row gap-5 items-center">
+      <form className="w-full h-full flex flex-col gap-5 items-center">
         <Input
           name="Send Whatsapp"
           placeholder="ex: 62555666777"

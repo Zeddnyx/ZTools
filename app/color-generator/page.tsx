@@ -1,8 +1,15 @@
 "use client";
+import Copy from "@/components/CopyText";
 import React, { useState } from "react";
 
 export default function page() {
-  const [color, setColor] = useState<string[]>(["fbf1c7"]);
+  const [color, setColor] = useState<string[]>([
+    "#FBF1C7",
+    "#0D8F4E",
+    "#50900E",
+    "#50009D",
+    "#00607A",
+  ]);
   const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   const string = ["A", "B", "C", "D", "E", "F"];
 
@@ -15,13 +22,12 @@ export default function page() {
         const randomValue =
           index % 2 === 0 ? number[randomIndex] : string[randomIndex];
         randomValue === undefined
-          ? (newColor += "0")
+          ? (newColor += "A")
           : (newColor += randomValue);
       }
       newColors.push(newColor);
     }
     setColor(newColors);
-    console.log(color);
   };
 
   return (
@@ -31,19 +37,28 @@ export default function page() {
           Color Generator : Create{" "}
           <span className="text-aqua">Quickly and Easily</span>
         </h1>
+        <p className="descCenter">The super fast color palettes generator!</p>
       </div>
       <div className="w-full flex justify-center flex-col">
         {color?.map((item, id) => {
           return (
-            <div key={id}>
-              <div className={`h-20 w-full bg-[${item}]`}>
+            <div
+              key={id}
+              className="h-20 w-full relative"
+              style={{ backgroundColor: item }}
+            >
+              <div className="bottom-1 left-1 absolute flex gap-2 items-center">
                 <h5>{item}</h5>
+                <Copy copy={item} />
               </div>
             </div>
           );
         })}
 
-        <button className="btn h-10 px-4 " onClick={handleGenerate}>
+        <button
+          className="bg-light0 text-dark0 font-semibold rounded h-10 px-4 mt-10"
+          onClick={handleGenerate}
+        >
           Generate
         </button>
       </div>

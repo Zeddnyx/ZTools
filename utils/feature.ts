@@ -7,13 +7,13 @@ import { WiEarthquake } from "react-icons/wi"
 import { FiUser } from "react-icons/fi"
 import {MdPassword, MdColorLens} from "react-icons/md"
 
-interface Homepage {
+interface Feature{
   title: string;
   link: string;
   icon: IconType;
 }
 
-export const homepage: Homepage[] = [
+export const feature: Feature[] = [
   {
     title: "check account",
     link: "/check-account",

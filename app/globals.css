@@ -52,16 +52,16 @@
   @apply text-center flex justify-center mt-2
 }
 .btn {
-  @apply bg-light1 rounded w-full md:w-80 text-dark0
+  @apply bg-light1 rounded w-full text-dark0 font-semibold text-dark0
 }
 .btn-normal {
-  @apply bg-light1 rounded px-2 py-4 h-full w-28
+  @apply bg-light1 rounded px-2 py-3 w-full text-dark0 font-semibold
 }
 .btn-delete {
   @apply bg-red rounded w-full px-5
 }
 .btn-edit {
-  @apply bg-yellow rounded w-full px-5
+  @apply bg-yellow rounded w-full px-5 text-dark0
 }
 
 /* homepage */
@@ -87,11 +87,11 @@
   @apply grid grid-cols-4 gap-4 p-2 font-bold
 }
 .btn-calc {
-  @apply bg-dark2 p-1 rounded-full
+  @apply bg-dark2 p-1 rounded-full text-base md:text-2xl
 }
 .btn-calc-del {
   @apply bg-red rounded-full
 }
 .btn-calc-clear {
-  @apply bg-yellow rounded-full mt-3
+  @apply bg-yellow text-dark0 rounded-full mt-3 text-xl md:text-2xl 
 }
