@@ -1,7 +1,8 @@
-"use client";
-
+"use client"
+import Location from "@/components/Location";
 import Loading from "@/app/loading";
 import { fetchRandomUser } from "@/services/queryFetch";
+import { MotionOpacity } from "@/components/Motion";
 
 export default function page() {
   const { datas, isInitialLoading, refetch } = fetchRandomUser();
@@ -11,11 +12,13 @@ export default function page() {
   };
 
   return (
-    <div>
+    <MotionOpacity>
       <div className="flexCenterMargin">
+        <Location />
         <div>
           <h1>
-            User Randomizer: Generate random <span className="text-aqua">User Info</span>
+            User Randomizer: Generate random{" "}
+            <span className="text-aqua">User Info</span>
           </h1>
           <p className="descCenter">
             This tool generates random user info for use in testing or creating
@@ -23,7 +26,7 @@ export default function page() {
           </p>
         </div>
         <button onClick={handleClick} className="btn h-10">
-        Generate
+          Generate
         </button>
 
         {isInitialLoading && <Loading />}
@@ -52,6 +55,6 @@ export default function page() {
           </div>
         )}
       </div>
-    </div>
+    </MotionOpacity>
   );
 }
