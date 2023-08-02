@@ -4,10 +4,10 @@
 
 @layer base {
   html {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
   }
   body {
-    @apply text-light1 bg-dark0 w-full h-full
+    @apply text-light1 bg-dark0 w-full h-full;
   }
   h1 {
     @apply text-2xl md:text-4xl font-bold leading-tight text-center;
@@ -16,82 +16,82 @@
     @apply text-xl md:text-3xl font-bold leading-tight text-center;
   }
   h3 {
-    @apply text-lg md:text-2xl font-bold leading-tight
+    @apply text-lg md:text-2xl font-bold leading-tight;
   }
   h4 {
-    @apply text-base md:text-xl font-bold leading-tight
+    @apply text-base md:text-xl font-bold leading-tight;
   }
   h5 {
-    @apply text-sm md:text-base font-bold leading-tight
+    @apply text-sm md:text-base font-bold leading-tight;
   }
   fieldset {
-  @apply border-2 border-light1 p-1 rounded w-full w-full  text-start;
+    @apply border-2 border-light1 p-1 rounded w-full w-full  text-start;
   }
   legend {
-  @apply px-2 capitalize text-sm
+    @apply px-2 capitalize text-sm uppercase;
   }
   input {
-    @apply bg-transparent outline-none w-full
+    @apply bg-transparent outline-none w-full;
   }
   button {
-    @apply outline-none flex justify-center items-center text-center
+    @apply outline-none flex justify-center items-center text-center pl-1
   }
 }
 
 /* global style */
 .container {
-  @apply max-w-5xl mx-auto 
+  @apply max-w-5xl mx-auto;
 }
 .flexFlex {
-  @apply flex items-center justify-center gap-3
+  @apply flex items-center justify-center gap-3;
 }
 .flexCenterMargin {
-  @apply flex flex-col justify-center items-center my-10 gap-10 w-full px-10 max-w-4xl mx-auto
+  @apply flex flex-col justify-center items-center my-10 gap-10 w-full px-10 max-w-4xl mx-auto;
 }
 .descCenter {
-  @apply text-center flex justify-center mt-2
+  @apply text-center flex justify-center mt-2;
 }
 .btn {
-  @apply bg-light1 rounded w-full text-dark0 font-semibold text-dark0
+  @apply bg-light1 rounded w-full text-dark0 font-semibold text-dark0;
 }
 .btn-normal {
-  @apply bg-light1 rounded px-2 py-3 w-full text-dark0 font-semibold
+  @apply bg-light1 rounded px-2 py-3 w-full text-dark0 font-semibold;
 }
 .btn-delete {
-  @apply bg-red rounded w-full px-5
+  @apply bg-red rounded w-full px-5;
 }
 .btn-edit {
-  @apply bg-yellow rounded w-full px-5 text-dark0
+  @apply bg-yellow rounded w-full px-5 text-dark0;
 }
 
 /* homepage */
 .container-box {
-  @apply w-full h-full my-10 flex flex-wrap gap-5 justify-center
+  @apply w-full h-full my-10 flex flex-wrap gap-5 justify-center;
 }
 .box-tools {
   @apply w-full border border-dark2 capitalize p-5 rounded-md flex justify-center items-center gap-4
-  hover:bg-dark1
+  hover:bg-dark1;
 }
 
 /* calculator */
 .calculator {
-  @apply w-full max-w-lg
+  @apply w-full max-w-lg;
 }
 .result {
-  @apply bg-dark2 p-2 rounded-full text-end
+  @apply bg-dark2 p-2 rounded-full text-end;
 }
 .result-input {
-  @apply text-end px-2 font-bold
+  @apply text-end px-2 font-bold;
 }
 .keypad {
-  @apply grid grid-cols-4 gap-4 p-2 font-bold
+  @apply grid grid-cols-4 gap-4 p-2 font-bold;
 }
 .btn-calc {
-  @apply bg-dark2 p-1 rounded-full text-base md:text-2xl
+  @apply bg-dark2 p-1 rounded-full text-base md:text-2xl;
 }
 .btn-calc-del {
-  @apply bg-red rounded-full
+  @apply bg-red rounded-full;
 }
 .btn-calc-clear {
-  @apply bg-yellow text-dark0 rounded-full mt-3 text-xl md:text-2xl 
+  @apply bg-yellow text-dark0 rounded-full mt-3 text-xl md:text-2xl;
 }
