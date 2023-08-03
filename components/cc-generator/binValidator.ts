@@ -1,5 +1,17 @@
 export const binValidator = (bin: string) => {
-  if (bin?.length === 6) {
+  if (bin?.length === 3) {
+    const random = Math.floor(Math.random() * (9999999999999 - 1000000000 + 1)) + 1000000000
+    return `${bin}${random}`
+  }
+  else if (bin?.length === 4) {
+    const random = Math.floor(Math.random() * (999999999999 - 1000000000 + 1)) + 1000000000
+    return `${bin}${random}`
+  }
+  else if (bin?.length === 5) {
+    const random = Math.floor(Math.random() * (99999999999 - 1000000000 + 1)) + 1000000000
+    return `${bin}${random}`
+  }
+  else if (bin?.length === 6) {
     const random = Math.floor(Math.random() * (9999999999 - 1000000000 + 1)) + 1000000000
     return `${bin}${random}`
   }

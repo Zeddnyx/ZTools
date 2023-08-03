@@ -11,7 +11,7 @@ export const MotionOpacity = ({ children }: MotionProps) => (
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
-    transition={{ duration: 2.5 }}
+    transition={{ duration: 0.5 }}
     viewport={{ once: false, amount: 0.5 }}
   >
     {children}

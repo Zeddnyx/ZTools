@@ -16,47 +16,47 @@ interface Feature{
 export const feature: Feature[] = [
   {
     title: "check account",
-    link: "/check-account",
+    link: "/dashboard/check-account",
     icon: RiPhoneFindFill,
   },
   {
     title: "todo list",
-    link: "/todo-list",
+    link: "/dashboard/todo-list",
     icon: BsClipboardCheck
   },
   {
     title: "cc number generator",
-    link: "/cc-number-generator",
+    link: "/dashboard/cc-number-generator",
     icon: BsCreditCard2Front,
   },
   {
     title: "send whatsapp",
-    link: "/send-whatsapp",
+    link: "/dashboard/send-whatsapp",
     icon: PiWhatsappLogoLight,
   },
   {
     title: "calculator",
-    link: "/calculator",
+    link: "/dashboard/calculator",
     icon: AiFillCalculator
   },
   {
     title: "earth quakes",
-    link: "/earth-quakes",
+    link: "/dashboard/earth-quakes",
     icon: WiEarthquake
   },
   {
     title: "random user",
-    link: "/random-user",
+    link: "/dashboard/random-user",
     icon: FiUser
   },
   {
     title: "password generator",
-    link: "/password-generator",
+    link: "/dashboard/password-generator",
     icon: MdPassword
   },
   {
     title: "color generator",
-    link: "/color-generator",
+    link: "/dashboard/color-generator",
     icon: MdColorLens
   }
 ]

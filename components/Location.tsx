@@ -1,14 +1,15 @@
-"use client"
+"use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React from "react";
 
-
 export default function Location() {
-  const location = usePathname();
   return (
-    <span className="absolute right-3 top-2">
-      <Link href="/">..{location?.replace("-", " ")}</Link>
-    </span>
+    <div className="relative w-full pb-10">
+      <div className="absolute flex items-center">
+        <Link href="/">
+          <p className="rotate-180 font-bold">&#10141; </p>
+        </Link>
+      </div>
+    </div>
   );
 }

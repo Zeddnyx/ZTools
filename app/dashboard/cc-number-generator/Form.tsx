@@ -13,15 +13,16 @@ import Input from "@/components/Input";
 import Dropdown from "@/components/DropDown";
 
 export default function CCGEN() {
-  const selectRandom = "random";
+  const [selectMonth, setselectMonth] = useState("random")
+  const [selectYear, setselectYear] = useState("random")
   const [dateStatus, setDateStats] = useState(false);
   const [cvvStatus, setCvvStats] = useState(false);
   const [results, setResults] = useState<string[]>([]);
   const [form, setForm] = useState({
     bin: "",
     dateStatus,
-    month: selectRandom,
-    year: selectRandom,
+    month: selectMonth,
+    year: selectYear,
     cvvStatus,
     cvv: 0,
     quantity: 10,
@@ -48,7 +49,6 @@ export default function CCGEN() {
     const dateTrueFalse = form.month === "random" && form.year != "random";
     const dateFalseTrue = form.month != "random" && form.year === "random";
 
-    console.log(form);
     let i = 0;
 
     // show bin, cvv not random
@@ -239,14 +239,14 @@ export default function CCGEN() {
 
           <Dropdown
             legend="MONTH"
-            select={selectRandom}
+            select={selectMonth}
             setSelect={handleInput}
             data={month}
           />
 
           <Dropdown
             legend="YEAR"
-            select={selectRandom}
+            select={selectYear}
             setSelect={handleInput}
             data={year}
           />
@@ -287,7 +287,7 @@ export default function CCGEN() {
       <fieldset className="mt-10 ">
         <legend>RESULT</legend>
         <div>
-          <div className="overflow-scroll h-28 text-xs">
+          <div className="overflow-scroll h-36 text-xs">
             {results.map((list, id) => (
               <p key={id}>{list}</p>
             ))}

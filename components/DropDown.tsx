@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-// import Arrow from "/arrow.svg";
 
 interface DropdownProps {
   data: string[];
@@ -16,22 +15,19 @@ export default function Dropdown({
   legend,
 }: DropdownProps) {
   const [isActive, setIsActive] = useState(false);
+  console.log("dropdown active");
 
   const handeSelect = (e: string) => {
     setSelect(e);
-    setIsActive(false);
+    setIsActive((prev) => !prev);
   };
+
   return (
     <fieldset>
       <legend>{legend}</legend>
       <div className="dropdown">
         <div>
-          <button onClick={() => setIsActive(!isActive)}>
-            {/* <span className={isActive ? "" : "rotate-180"}> */}
-            {/*   <img className="w-3" src={Arrow} alt="arrow" /> */}
-            {/* </span> */}
-            {select}
-          </button>
+          <button onClick={() => setIsActive(!isActive)}>{select}</button>
         </div>
         {isActive && (
           <div className="dropdown-content">
