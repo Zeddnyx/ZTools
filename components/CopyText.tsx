@@ -1,13 +1,15 @@
+import { memo, useCallback } from "react";
 import { FaCopy } from "react-icons/fa";
 
 interface IProps {
-  copy: string | any;
+  copy: any;
 }
-export default function Copy({ copy }: IProps) {
-
-  const handleCopy = () => {
-    copy && navigator.clipboard.writeText(copy);
-  };
+export const Copy = memo(({ copy }: IProps) => {
+  console.log("copiied!");
+  const handleCopy = useCallback(
+    () => copy && navigator.clipboard.writeText(copy),
+    [copy]
+  );
 
   return (
     <button
@@ -17,4 +19,4 @@ export default function Copy({ copy }: IProps) {
       <FaCopy />
     </button>
   );
-}
+});

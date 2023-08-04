@@ -18,6 +18,7 @@ export default function page() {
         </div>
         <form className="w-full h-full flex flex-col gap-5 items-center">
           <Input
+            label="Number"
             name="Send Whatsapp"
             placeholder="ex: 62555666777"
             type="number"

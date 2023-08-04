@@ -35,6 +35,7 @@ export default function TodoList() {
     <>
       <div className="flex flex-col items-center gap-2 w-full">
         <Input
+          label="Todo List"
           name="Todo List"
           placeholder="add todo"
           type="text"
@@ -51,6 +52,7 @@ export default function TodoList() {
             {editId === todo.id ? (
               <div className="flex flex-col items-center w-full gap-2">
                 <Input
+                  label="Edit Todo"
                   name="Edit Todo"
                   placeholder="Edit Todo"
                   type="text"

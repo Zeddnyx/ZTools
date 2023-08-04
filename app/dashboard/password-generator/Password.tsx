@@ -1,4 +1,5 @@
 "use client";
+import { Copy } from "@/components/CopyText";
 import Input from "@/components/Input";
 import { useState } from "react";
 
@@ -11,11 +12,13 @@ export default function Password() {
   const upper = "QWERTYUIOPLKJHGFDSAZXCVBNM";
   const number = "1234567890";
 
+  console.log(length);
+
   const handleGenerate = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const pw = `${symbole}${lower}${upper}${number}`;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < length; i++) {
       const generate = pw[~~(Math.random() * pw.length)];
       setResults((results: any) =>
         [...results, generate].toString().replace(/,/g, "")
@@ -30,6 +33,7 @@ export default function Password() {
         onSubmit={handleGenerate}
       >
         <Input
+          label="LENGTH"
           type="number"
           name="length"
           value={length}
@@ -39,10 +43,20 @@ export default function Password() {
           }
         />
 
-        <fieldset>
-          <legend>Password</legend>
-          <input className="input" type="text" readOnly value={results} />
-        </fieldset>
+        <div className="flex gap-2 items-center w-full relative">
+          <Input
+            label="PASSWORD"
+            type="text"
+            name="password"
+            value={results}
+            placeholder="password"
+            disable={true}
+          />
+          <span className="absolute top-5 right-2">
+
+          <Copy copy={results} />
+          </span>
+        </div>
 
         <button className="btn h-10" type="submit">
           generate

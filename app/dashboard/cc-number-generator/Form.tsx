@@ -8,7 +8,7 @@ import {
   year,
 } from "@/components/cc-generator/dateGenerator";
 import { cvvGenerator } from "@/components/cc-generator/cvvGenerator";
-import BtnCopy from "@/components/CopyText";
+import { Copy } from "@/components/CopyText";
 import Input from "@/components/Input";
 import Dropdown from "@/components/DropDown";
 
@@ -76,8 +76,7 @@ export default function CCGEN() {
       while (i < form.quantity) {
         setResults((results) => [
           ...results,
-          `${binValidator(form.bin)}|${monthRandom(month)}|${
-            form.year
+          `${binValidator(form.bin)}|${monthRandom(month)}|${form.year
           }|${cvvGenerator()}`,
         ]);
         i++;
@@ -100,8 +99,7 @@ export default function CCGEN() {
       while (i < form.quantity) {
         setResults((results) => [
           ...results,
-          `${binValidator(form.bin)}|${form.month}|${
-            form.year
+          `${binValidator(form.bin)}|${form.month}|${form.year
           }|${cvvGenerator()}`,
         ]);
         i++;
@@ -146,8 +144,7 @@ export default function CCGEN() {
       while (i < form.quantity) {
         setResults((results) => [
           ...results,
-          `${binValidator(form.bin)}|${form.month}|${yearRandom(year)}|${
-            form.cvv
+          `${binValidator(form.bin)}|${form.month}|${yearRandom(year)}|${form.cvv
           }`,
         ]);
         i++;
@@ -158,8 +155,7 @@ export default function CCGEN() {
       while (i < form.quantity) {
         setResults((results) => [
           ...results,
-          `${binValidator(form.bin)}|${monthRandom(month)}|${form.year}|${
-            form.cvv
+          `${binValidator(form.bin)}|${monthRandom(month)}|${form.year}|${form.cvv
           }`,
         ]);
         i++;
@@ -218,6 +214,7 @@ export default function CCGEN() {
     <>
       <form className="grid gap-2 mt-16">
         <Input
+          label="BIN"
           type="number"
           onChange={handleInput}
           name="bin"
@@ -265,6 +262,7 @@ export default function CCGEN() {
           </div>
 
           <Input
+            label="CVV"
             type="number"
             onChange={handleInput}
             name="cvv"
@@ -272,6 +270,7 @@ export default function CCGEN() {
           />
 
           <Input
+            label="QUANTITY"
             type="number"
             onChange={handleInput}
             name="quantity"
@@ -292,7 +291,7 @@ export default function CCGEN() {
               <p key={id}>{list}</p>
             ))}
           </div>
-          <BtnCopy copy={results} />
+          <Copy copy={results} />
         </div>
       </fieldset>
     </>

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Copy from "@/components/CopyText";
+import {Copy} from "@/components/CopyText";
 
 export default function Color() {
   const [color, setColor] = useState<string[]>([
