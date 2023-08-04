@@ -26,8 +26,10 @@ export default function TodoList() {
   };
 
   const handleAddTodo = () => {
-    setTodos(editTitle);
-    setEditTitle("");
+    if (!!editTitle) {
+      setTodos(editTitle);
+      setEditTitle("");
+    }
   };
   return (
     <>

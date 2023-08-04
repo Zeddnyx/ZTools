@@ -1,11 +1,9 @@
-import { MotionOpacity } from "@/components/Motion";
 import { feature } from "@/utils/feature";
 import Link from "next/link";
 import React from "react";
 
 export default function Homepage() {
   return (
-    <MotionOpacity>
       <section>
         <div className="container-box">
           {feature.map((item, id) => (
@@ -20,6 +18,5 @@ export default function Homepage() {
           ))}
         </div>
       </section>
-    </MotionOpacity>
   );
 }

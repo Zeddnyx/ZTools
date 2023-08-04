@@ -6,7 +6,7 @@ interface IProps {
 export default function Copy({ copy }: IProps) {
 
   const handleCopy = () => {
-    !copy || !copy ? navigator.clipboard.writeText(copy) : "";
+    copy && navigator.clipboard.writeText(copy);
   };
 
   return (
