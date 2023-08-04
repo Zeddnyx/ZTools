@@ -49,7 +49,7 @@
   @apply flex items-center justify-center gap-3;
 }
 .flexCenterMargin {
-  @apply flex flex-col justify-center items-center my-10 gap-10 w-full max-w-4xl mx-auto;
+  @apply flex flex-col justify-center items-center my-10 px-10 md:px-5 gap-10 w-full max-w-4xl mx-auto;
 }
 .descCenter {
   @apply text-center flex justify-center mt-2;
