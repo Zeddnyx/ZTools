@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { memo, useState } from "react";
 
 interface DropdownProps {
   data: string[];
@@ -8,7 +8,7 @@ interface DropdownProps {
   legend: string;
 }
 
-export default function Dropdown({
+function Dropdown({
   data,
   select,
   setSelect,
@@ -46,3 +46,4 @@ export default function Dropdown({
     </fieldset>
   );
 }
+export default memo(Dropdown);

@@ -1,22 +1,27 @@
+"use client";
+import { memo } from "react";
+
 interface Props {
   label: string;
   type: string;
   name?: string;
   placeholder?: string;
-  value?: string| number;
+  value?: string | number;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   disable?: boolean;
 }
 
-export default function Input({
+function Input({
   label,
   type,
   name,
   value,
   placeholder,
   onChange,
-  disable = false
+  disable = false,
 }: Props) {
+  console.log("input");
+
   return (
     <fieldset>
       <legend>{label}</legend>
@@ -32,3 +37,4 @@ export default function Input({
     </fieldset>
   );
 }
+export default memo(Input);

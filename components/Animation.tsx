@@ -14,7 +14,7 @@ export default function Animation({children}: Props) {
         style={{
             opacity: onScreen ? 1 : 0,
             translate: onScreen ? 'none' : '0 2rem',
-            transition : '1000ms ease-in-out'
+            transition : '700ms ease-in-out'
         }}>
             {children}
         </div>
