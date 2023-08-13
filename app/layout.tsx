@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "ZTools",
   description: "A collection of useful tools for your daily needs",
+  icons: {
+    icon: "/favicon.ico"
+  }
 };
 
 export default function RootLayout({
