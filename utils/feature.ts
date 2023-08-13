@@ -35,24 +35,24 @@ export const feature: Feature[] = [
     icon: PiWhatsappLogoLight,
   },
   {
-    title: "calculator",
-    link: "/dashboard/calculator",
-    icon: AiFillCalculator
-  },
-  {
     title: "earth quakes",
     link: "/dashboard/earth-quakes",
     icon: WiEarthquake
   },
   {
-    title: "random user",
-    link: "/dashboard/random-user",
-    icon: FiUser
+    title: "calculator",
+    link: "/dashboard/calculator",
+    icon: AiFillCalculator
   },
   {
     title: "password generator",
     link: "/dashboard/password-generator",
     icon: MdPassword
+  },
+  {
+    title: "random user",
+    link: "/dashboard/random-user",
+    icon: FiUser
   },
   {
     title: "color generator",

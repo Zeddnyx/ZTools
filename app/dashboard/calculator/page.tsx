@@ -1,4 +1,3 @@
-import Location from "@/components/Location";
 import { MotionOpacity } from "@/components/Motion";
 import Calculator from "./Calculator";
 
@@ -7,7 +6,6 @@ export default function Home() {
   return (
     <MotionOpacity>
       <div className="flexCenterMargin">
-        <Location />
         <div>
           <h1>
             Calculator Tool: Perform Basic Math Operations{" "}

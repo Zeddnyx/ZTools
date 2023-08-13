@@ -1,5 +1,4 @@
 "use client"
-import Location from "@/components/Location";
 import Loading from "@/app/loading";
 import { fetchEarthQuake } from "@/services/queryFetch";
 import { MotionOpacity } from "@/components/Motion";
@@ -14,10 +13,10 @@ export default function page() {
   return (
     <MotionOpacity>
       <div className="flexCenterMargin">
-        <Location />
         <div>
           <h1>
-            Earthquakes check get real-time updates on Earthquakes indonesian
+            Earthquakes check get real-time updates on{" "}
+            <span className="text-aqua">Earthquakes indonesian</span>
           </h1>
           <p className="descCenter">
             This tool provides realtime updates on earthquakes around indonesia,

@@ -1,7 +1,6 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import Input from "@/components/Input";
-import Location from "@/components/Location";
 import { MotionOpacity } from "@/components/Motion";
 
 export default function page() {
@@ -9,7 +8,6 @@ export default function page() {
   return (
     <MotionOpacity>
       <div className="flexCenterMargin">
-        <Location />
         <div>
           <h2>send whatsapp message without save number</h2>
           <p className="descCenter">

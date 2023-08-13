@@ -1,5 +1,3 @@
-import React from "react";
-import Location from "@/components/Location";
 import { MotionOpacity } from "@/components/Motion";
 import Form from "./Form";
 
@@ -7,7 +5,6 @@ export default function page() {
   return (
     <MotionOpacity>
       <div className="flexCenterMargin">
-        <Location />
         <div>
           <h1>Random Test Credit Card Number Generator</h1>
           <p className="descCenter">

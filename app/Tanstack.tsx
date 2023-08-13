@@ -1,7 +1,7 @@
 "use client"
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
-import Footer from "@/components/Footer";
 import Animation from "@/components/Animation";
+import Navbar from "@/components/Navbar";
 
 interface IProps {
   children: React.ReactNode;
@@ -20,8 +20,8 @@ export default function Providers({ children }: IProps) {
     <div>
       <Animation >
         <QueryClientProvider client={queryClient}>
+          <Navbar />
           {children}
-          <Footer />
         </QueryClientProvider>
       </Animation >
     </div>

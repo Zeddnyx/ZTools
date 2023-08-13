@@ -1,5 +1,4 @@
 "use client"
-import Location from "@/components/Location";
 import Loading from "@/app/loading";
 import { fetchRandomUser } from "@/services/queryFetch";
 import { MotionOpacity } from "@/components/Motion";
@@ -14,7 +13,6 @@ export default function page() {
   return (
     <MotionOpacity>
       <div className="flexCenterMargin">
-        <Location />
         <div>
           <h1>
             User Randomizer: Generate random{" "}
