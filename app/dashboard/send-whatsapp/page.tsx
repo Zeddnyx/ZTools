@@ -9,8 +9,9 @@ export default function page() {
     <MotionOpacity>
       <div className="flexCenterMargin">
         <div>
-          <h2>Send whatsapp message 
-            <span className="text-aqua">without save number</span></h2>
+          <h1>Send whatsapp message{" "}
+            <span className="text-aqua">without save number</span>
+          </h1>
           <p className="descCenter">
             Just simply put number and you ready to go
           </p>

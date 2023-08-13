@@ -66,7 +66,7 @@ export default function TodoList() {
                 </button>
               </div>
             ) : (
-              <div className="mt-2 w-full flex gap-16 my-2 bg-dark1 p-2 justify-between items-center">
+              <div className="mt-2 w-full flex gap-16 my-2 bg-dark1 p-2 justify-between items-center rounded">
                 <p>{todo.title}</p>
                 <div className="flex gap-3 items-center">
                   <button

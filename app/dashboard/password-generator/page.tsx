@@ -6,7 +6,11 @@ export default function page() {
     <MotionOpacity>
       <section className="flexCenterMargin">
         <div>
-          <h2>Password Generator: Create Strong and Secure Password</h2>
+          <h1>Password Generator: Create{" "}
+            <span className="text-aqua">
+              Strong and Secure Password
+            </span>
+          </h1>
           <p className="descCenter">
             This tools generates strong and secure passwords that are difficult
             to crack
