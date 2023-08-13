@@ -25,7 +25,7 @@ export const feature: Feature[] = [
     icon: BsClipboardCheck
   },
   {
-    title: "cc number generator",
+    title: "CC number generator",
     link: "/dashboard/cc-number-generator",
     icon: BsCreditCard2Front,
   },

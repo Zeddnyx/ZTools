@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { FiDelete } from "react-icons/fi"
 
 export default function Calculator() {
   const [result, setResult] = useState("");
@@ -30,7 +31,7 @@ export default function Calculator() {
       </div>
 
       <div className="keypad">
-        <button className="btn-calc-clear" onClick={handleClear} id="clear">
+        <button className="btn-calc-del" onClick={handleClear} id="clear">
           C
         </button>
         <span></span>
@@ -73,7 +74,7 @@ export default function Calculator() {
           *
         </button>
         <button className="btn-calc-del" onClick={handleDelete}>
-          DEL
+          <FiDelete />
         </button>
         <button className="btn-calc" name="0" onClick={handleClick}>
           0

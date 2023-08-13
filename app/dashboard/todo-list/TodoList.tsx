@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { shallow } from "zustand/shallow";
 import { useStore } from "@/store/stateManagement";
 import Input from "@/components/Input";
+import { MdDeleteOutline } from "react-icons/md"
+import { AiOutlineEdit } from "react-icons/ai"
 
 export default function TodoList() {
   const [todos, setTodos, deleteTodos, editTodos] = useStore((state) => {
@@ -71,13 +73,13 @@ export default function TodoList() {
                     onClick={() => handleEdit(todo.id, todo.title)}
                     className="btn-edit h-10"
                   >
-                    Edit
+                    <AiOutlineEdit />
                   </button>
                   <button
                     onClick={() => deleteTodos(todo.id)}
                     className="btn-delete h-10"
                   >
-                    Delete
+                    <MdDeleteOutline />
                   </button>
                 </div>
               </div>

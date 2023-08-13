@@ -12,9 +12,7 @@ export default function Home() {
             <span className="text-aqua">Quickly and Easily</span>
           </h1>
           <p className="descCenter">
-            This tool performs basic math operations quickly and easily. It's
-            useful for anyone who needs to perform quick calculations without
-            having to use a physical calculator.
+            This tool performs basic math operations quickly and easily.
           </p>
         </div>
         <div className="calculator">

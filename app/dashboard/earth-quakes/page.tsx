@@ -21,9 +21,7 @@ export default function page() {
           <p className="descCenter">
             This tool provides realtime updates on earthquakes around indonesia,
             this API is made by{" "}
-            <p>
-              <a href="https://github.com/renomureza"> Renomureza</a>
-            </p>
+              <a href="https://github.com/renomureza">Renomureza</a>
           </p>
         </div>
         <button onClick={handleClick} className="btn h-10">
