@@ -12,10 +12,9 @@ export default function Password() {
   const upper = "QWERTYUIOPLKJHGFDSAZXCVBNM";
   const number = "1234567890";
 
-  console.log(length);
-
   const handleGenerate = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setResults([]);
 
     const pw = `${symbole}${lower}${upper}${number}`;
     for (let i = 0; i < length; i++) {

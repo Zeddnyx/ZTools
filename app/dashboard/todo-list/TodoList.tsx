@@ -48,6 +48,10 @@ export default function TodoList() {
           Add Todo
         </button>
       </div>
+
+      {/* count todo*/}
+      {!!todos && <h5>you have {todos.length} todos</h5>}
+
       <div className="w-full">
         {todos.map((todo: any) => (
           <div key={todo.id} className="flex gap-5 w-full">
