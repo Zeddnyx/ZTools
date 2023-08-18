@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Tanstack from "./Tanstack";
+import Tanstack from "@/components/Providers/Tanstack";
 
 const inter = Inter({ subsets: ["latin"] });
 

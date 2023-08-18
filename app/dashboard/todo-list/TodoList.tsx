@@ -1,15 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import { shallow } from "zustand/shallow";
-import { useStore } from "@/store/stateManagement";
 import Input from "@/components/Input";
 import { MdDeleteOutline } from "react-icons/md"
 import { AiOutlineEdit } from "react-icons/ai"
+import { useStoreApp } from "@/store/useStoreApp";
 
 export default function TodoList() {
-  const [todos, setTodos, deleteTodos, editTodos] = useStore((state) => {
-    return [state.todos, state.setTodos, state.deleteTodos, state.editTodos];
-  }, shallow);
+  const { todos, deleteTodos, editTodos, setTodos } = useStoreApp()
 
   const [editId, setEditId] = useState<number | null>(null);
   const [editTitle, setEditTitle] = useState("");

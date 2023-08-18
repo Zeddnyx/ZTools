@@ -1,20 +1,10 @@
+import { TStore, TTodo} from "./types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-type Todo = {
-  id: number;
-  title: string;
-};
-
-type TodoStore = {
-  todos: Todo[];
-  setTodos: (title: string) => void;
-  deleteTodos: (id: number) => void;
-  editTodos: (id: number, newTitle: string) => void;
-};
 
 export const useStore = create(
-  persist<TodoStore>(
+  persist<TStore>(
     (set) => ({
       todos: [],
       setTodos: (title: any) => {
@@ -24,17 +14,18 @@ export const useStore = create(
       },
       deleteTodos: (id: number) => {
         set((state: any) => ({
-          todos: state.todos.filter((todo: Todo) => todo?.id !== id),
+          todos: state.todos.filter((todo: TTodo) => todo?.id !== id),
         }));
       },
       editTodos: (id: number, newTitle: string) => {
         set((state: any) => ({
-          todos: state.todos.map((todo: Todo) =>
-            todo.id === id ? { ...todo, title: newTitle } : todo
+          todos: state.todos.map((todo: TTodo) =>
+            todo.id === id ? { ...todo, title: newTitle } : todo,
           ),
         }));
       },
+
     }),
-    { name: "storage" }
-  )
+    { name: "storage" },
+  ),
 );

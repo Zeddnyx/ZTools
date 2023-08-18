@@ -78,7 +78,7 @@
   @apply w-full h-full my-10 flex flex-wrap gap-5 justify-center;
 }
 .box-tools {
-  @apply w-full border border-dark2 capitalize p-5 rounded-md flex justify-center items-center gap-3
+  @apply w-full border border-dark2 capitalize p-5 rounded-md flex justify-center items-center gap-3 text-light1
   hover:bg-dark1;
 }
 

@@ -1,13 +1,14 @@
 import { IconType } from "react-icons";
-import {RiPhoneFindFill } from "react-icons/ri";
-import { BsCreditCard2Front,BsClipboardCheck} from "react-icons/bs"
-import {PiWhatsappLogoLight} from "react-icons/pi"
-import {AiFillCalculator} from "react-icons/ai"
-import { WiEarthquake } from "react-icons/wi"
-import { FiUser } from "react-icons/fi"
-import {MdPassword, MdColorLens} from "react-icons/md"
+import { RiPhoneFindFill } from "react-icons/ri";
+import { BsCreditCard2Front, BsClipboardCheck } from "react-icons/bs";
+import { PiWhatsappLogoLight } from "react-icons/pi";
+import { AiFillCalculator } from "react-icons/ai";
+import { WiEarthquake } from "react-icons/wi";
+import { FiUser } from "react-icons/fi";
+import { MdPassword, MdColorLens} from "react-icons/md";
+import { LuStickyNote } from "react-icons/lu";
 
-interface Feature{
+interface Feature {
   title: string;
   link: string;
   icon: IconType;
@@ -22,7 +23,12 @@ export const feature: Feature[] = [
   {
     title: "todo list",
     link: "/dashboard/todo-list",
-    icon: BsClipboardCheck
+    icon: BsClipboardCheck,
+  },
+  {
+    title: "Notes",
+    link: "/dashboard/notes",
+    icon: LuStickyNote,
   },
   {
     title: "CC number generator",
@@ -37,26 +43,26 @@ export const feature: Feature[] = [
   {
     title: "earth quakes",
     link: "/dashboard/earth-quakes",
-    icon: WiEarthquake
+    icon: WiEarthquake,
   },
   {
     title: "calculator",
     link: "/dashboard/calculator",
-    icon: AiFillCalculator
+    icon: AiFillCalculator,
   },
   {
     title: "password generator",
     link: "/dashboard/password-generator",
-    icon: MdPassword
+    icon: MdPassword,
   },
   {
     title: "random user",
     link: "/dashboard/random-user",
-    icon: FiUser
+    icon: FiUser,
   },
   {
     title: "color generator",
     link: "/dashboard/color-generator",
-    icon: MdColorLens
-  }
-]
+    icon: MdColorLens,
+  },
+];

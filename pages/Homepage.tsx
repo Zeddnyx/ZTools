@@ -9,8 +9,8 @@ export default function Homepage() {
           {feature.map((item, id) => (
             <Link key={id} href={item.link}>
               <div className="box-tools">
-                <span className="text-light1">
-                  <item.icon size="20" />
+                <span>
+                  <item.icon size="20" color="text-light1" />
                 </span>
                 <p>{item.title}</p>
               </div>
