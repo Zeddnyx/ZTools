@@ -1,4 +1,3 @@
-
 export type TTodo = {
   id: number;
   title: string;
@@ -7,8 +6,8 @@ export type TTodo = {
 export type TNote = {
   id: number;
   title: string;
-  note: string;
-  bg?: string;
+  body: string;
+  bg: string;
 };
 
 export type TStore = {
@@ -16,4 +15,8 @@ export type TStore = {
   setTodos: (title: string) => void;
   deleteTodos: (id: number) => void;
   editTodos: (id: number, newTitle: string) => void;
+  notes: TNote[];
+  setNotes: (title: string, body: string, bg:string) => void;
+  editNotes: (id: number, title: string, body: string) => void;
+  deleteNotes: (id: number) => void;
 };

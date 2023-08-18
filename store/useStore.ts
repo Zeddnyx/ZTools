@@ -1,4 +1,4 @@
-import { TStore, TTodo} from "./types";
+import { TStore, TTodo, TNote } from "./types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
@@ -25,6 +25,25 @@ export const useStore = create(
         }));
       },
 
+      // notes 
+      notes: [],
+      setNotes: (title: string, body: string, bg:string) => {
+        set((state: any) => ({
+          notes: [...state.notes, { id: Date.now(), title, body, bg}],
+        }));
+      },
+      deleteNotes: (id: number) => {
+        set((state: any) => ({
+          notes: state.notes.filter((notes: TNote) => notes?.id !== id),
+        }));
+      },
+      editNotes: (id: number, newNotes: string, newBody: string) => {
+        set((state: any) => ({
+          notes: state.notes.map((notes: TNote) =>
+            notes.id === id ? { ...notes, title: newNotes, body: newBody } : notes,
+          ),
+        }));
+      },
     }),
     { name: "storage" },
   ),

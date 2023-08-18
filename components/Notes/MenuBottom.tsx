@@ -1,15 +1,11 @@
-import { useRouter } from "next/navigation";
 
 interface MenuBottomProps {
   color: string[];
   setColor: (color: string) => void;
+  handleSave: () => void;
 }
 
-export const MenuBottom: React.FC<MenuBottomProps> = ({ color, setColor }) => {
-  const navigate = useRouter()
-  const handleSave = () => {
-    navigate.push("/dashboard/notes")
-  }
+export const MenuBottom: React.FC<MenuBottomProps> = ({ color, setColor, handleSave }) => {
 
   return (
     <div className="flex justify-between items-center w-full">
@@ -23,7 +19,7 @@ export const MenuBottom: React.FC<MenuBottomProps> = ({ color, setColor }) => {
           ></div>
         ))}
       </div>
-      <button onClick={() => handleSave()}>Save</button>
+      <button onClick={handleSave}>Save</button>
     </div>
   );
 };

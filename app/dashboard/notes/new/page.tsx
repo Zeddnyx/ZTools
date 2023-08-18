@@ -1,38 +1,51 @@
 "use client";
-import Input from "@/components/Input"
-import { MenuBottom } from "@/components/Notes/MenuBottom"
-import { useState } from "react"
+import { useState } from "react";
+import {useRouter} from "next/navigation";
+
+import Input from "@/components/Input";
+import { MenuBottom } from "@/components/Notes/MenuBottom";
+import { useStoreApp } from "@/store/useStoreApp";
 
 export default function page() {
-
-  const [value, setValue] = useState<string>("bg-dark0")
+  const { setNotes } = useStoreApp();
   const [input, setInput] = useState({
     title: "",
-    note: "",
-    id: Date.now(),
-    bg: value
-  })
+    body: "",
+    bg: "#504945",
+  });
+
+  const router = useRouter();
+  const handleSave = () => {
+    setNotes(input.title, input.body, input.bg);
+    router.push("/dashboard/notes");
+  };
 
   return (
-    <div className="flexCenterMargin" style={{ backgroundColor: value }}>
+    <div className="flexCenterMargin" style={{ backgroundColor: input.bg }}>
       <Input
         type="text"
         name="title"
         placeholder="Title"
         label="Notes"
-        onChange={(e) => setInput({ ...input, title: e.target.value })} />
-      <textarea className="bg-transparent focus:outline-none focus:ring-0 resize-none w-full"
+        onChange={(e) => setInput({ ...input, title: e.target.value })}
+      />
+      <textarea
+        className="bg-transparent focus:outline-none focus:ring-0 resize-none w-full"
         placeholder="Note"
         rows={10}
         cols={50}
-        value={input.note}
-        onChange={(e) => setInput({ ...input, note: e.target.value })}
+        value={input.body}
+        onChange={(e) => setInput({ ...input, body: e.target.value })}
       ></textarea>
       <div className="w-full">
-        <MenuBottom color={color} setColor={setValue} />
+        <MenuBottom
+          color={color}
+          setColor={(e) => setInput({ ...input, bg: e })}
+          handleSave={() => handleSave()}
+        />
       </div>
     </div>
-  )
+  );
 }
 
 const color = [
@@ -42,5 +55,6 @@ const color = [
   "#b8bb26",
   "#83a598",
   "#8ec07c",
-  "#fb4934"
-]
+  "#fb4934",
+];
+

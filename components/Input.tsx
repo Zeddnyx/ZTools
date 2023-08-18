@@ -20,7 +20,6 @@ function Input({
   onChange,
   disable = false,
 }: Props) {
-  console.log("input");
 
   return (
     <fieldset>
