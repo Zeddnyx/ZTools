@@ -12,7 +12,7 @@ export const MenuBottom: React.FC<MenuBottomProps> = ({ color, setColor, handleS
       <div className="flex gap-2 items-center">
         {color.map((color, i) => (
           <div
-            className="w-7 h-7 border rounded-full border-dark2 cursor-pointer"
+            className="w-7 h-7 border rounded-full border-light1 border cursor-pointer"
             key={i}
             style={{ backgroundColor: color }}
             onClick={() => setColor(color)}

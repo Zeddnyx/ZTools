@@ -15,7 +15,6 @@ function Dropdown({
   legend,
 }: DropdownProps) {
   const [isActive, setIsActive] = useState(false);
-  console.log("dropdown active");
 
   const handeSelect = (e: string) => {
     setSelect(e);
