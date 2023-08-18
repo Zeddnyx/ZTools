@@ -22,7 +22,7 @@ export default function page() {
   });
 
   const handleEdit = () => {
-    editNotes(note.id, edit.title, edit.body);
+    editNotes(note.id, edit.title, edit.body, edit.bg);
     router.push(`/dashboard/notes/view/${id}`);
   };
 
@@ -49,6 +49,7 @@ export default function page() {
         <div className="w-full">
           <MenuBottom
             color={color}
+            select={edit.bg}
             setColor={(e) => setEdit({ ...edit, bg: e })}
             handleSave={() => handleEdit()}
           />

@@ -16,7 +16,7 @@ export type TStore = {
   deleteTodos: (id: number) => void;
   editTodos: (id: number, newTitle: string) => void;
   notes: TNote[];
-  setNotes: (title: string, body: string, bg:string) => void;
-  editNotes: (id: number, title: string, body: string) => void;
+  setNotes: (title: string, body: string, bg: string) => void;
+  editNotes: (id: number, title: string, body: string, bg: string) => void;
   deleteNotes: (id: number) => void;
 };

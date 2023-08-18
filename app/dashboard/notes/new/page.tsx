@@ -26,7 +26,6 @@ export default function page() {
     <MotionOpacity>
       <div
         className="flexCenterMargin p-2 rounded"
-        style={{ backgroundColor: input.bg }}
       >
         <ButtonBack />
         <Input
@@ -47,6 +46,7 @@ export default function page() {
         <div className="w-full">
           <MenuBottom
             color={color}
+            select={input.bg}
             setColor={(e) => setInput({ ...input, bg: e })}
             handleSave={() => handleSave()}
           />
@@ -57,7 +57,6 @@ export default function page() {
 }
 
 const color = [
-  "#282828",
   "#504945",
   "#bdae93",
   "#b8bb26",

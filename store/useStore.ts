@@ -37,10 +37,10 @@ export const useStore = create(
           notes: state.notes.filter((notes: TNote) => notes?.id !== id),
         }));
       },
-      editNotes: (id: number, newNotes: string, newBody: string) => {
+      editNotes: (id: number, newNotes: string, newBody: string, newBg:string) => {
         set((state: any) => ({
           notes: state.notes.map((notes: TNote) =>
-            notes.id === id ? { ...notes, title: newNotes, body: newBody } : notes,
+            notes.id === id ? { ...notes, title: newNotes, body: newBody, bg: newBg } : notes,
           ),
         }));
       },

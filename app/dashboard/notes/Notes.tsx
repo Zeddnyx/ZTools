@@ -12,12 +12,12 @@ export default function Notes() {
   return (
     <MotionOpacity>
       <div className="relative w-full h-full">
-        <div className="flex flex-wrap justify-center items-start gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 items-start gap-5">
           {notes &&
             notes.map((note, id) => (
               <div
                 key={note.id}
-                className="p-2 h-40 w-48 md:w-60 relative rounded"
+                className="p-2 h-36 md:h-40 w-40 sm:w-48 md:w-60 relative rounded"
                 style={{ backgroundColor: note.bg }}
               >
                 <div className="flex justify-between items-center mb-4 gap-5">
