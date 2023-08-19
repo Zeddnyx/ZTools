@@ -278,7 +278,7 @@ export default function CCGEN() {
           />
         </div>
 
-        <button onClick={handleClick} className="btn py-2">
+        <button onClick={handleClick} className="btn bg-light1 py-2">
           Generate
         </button>
       </form>

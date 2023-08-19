@@ -98,10 +98,7 @@
 
 /* Calculator Section */
 .result {
-  @apply bg-dark2 p-2 rounded-full text-end mb-5;
-}
-.result-input {
-  @apply text-end px-2 font-bold h-10 text-2xl;
+  @apply bg-dark2 h-16 md:h-20 md:w-96 py-2 px-3 rounded text-end mb-5;
 }
 .keypad {
   @apply grid grid-cols-4 gap-4 p-2 font-bold;

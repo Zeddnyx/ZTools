@@ -57,7 +57,7 @@ export default function Password() {
           </span>
         </div>
 
-        <button className="btn h-10" type="submit">
+        <button className="btn bg-light1 h-10" type="submit">
           generate
         </button>
       </form>

@@ -21,6 +21,7 @@ module.exports = {
         aqua: "#8ec07c",
         aqua_alt: "#689d6a",
         red: "#fb4934",
+        red_alt: "#cc241d",
       },
     },
   },

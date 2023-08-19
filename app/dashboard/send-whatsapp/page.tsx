@@ -23,7 +23,7 @@ export default function page() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <button className="btn h-12">
+          <button className="btn bg-light1 h-12">
             <a href={`https://wa.me/${input}`}>send</a>
           </button>
         </form>
