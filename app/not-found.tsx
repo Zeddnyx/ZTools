@@ -1,11 +1,12 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Error() {
   return (
-    <div className="capitalize flexCenterMargin">
-    <h2>Error page not found</h2>
-    <Link href={"/"}>back to home</Link>
+    <div className="flexCenterMargin">
+      <h2 className="text-red">Error page not found x_x</h2>
+      <button>
+        <Link href={"/dashboard"}>back to home</Link>
+      </button>
     </div>
   );
 }
-

@@ -38,13 +38,13 @@ export default function page() {
           Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit
         </p>
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flexCenterCenter">
         <Image src={Logo} height={100} width={100} alt="logo" />
         <h1>
           <span className="text-aqua">Z</span>tools
         </h1>
       </div>
-      <div className="flex justify-between items-center">
+      <div className="flexBetweenCenter">
       <h5><a href="https://github.com/Zeddnyx">Contact</a></h5>
         <span>
           <a href="https://github.com/Zeddnyx/Ztools" target="_blank">

@@ -44,18 +44,24 @@
   }
 }
 
-/* global style */
-.flexFlex {
+/* Global Style */
+.flexCenterCenter {
   @apply flex items-center justify-center gap-3;
 }
+.flexBetweenCenter {
+  @apply flex items-center justify-between gap-3;
+}
 .flexCenterMargin {
-  @apply flex flex-col justify-center items-center mt-20 px-10 md:px-5 gap-10 w-full max-w-4xl mx-auto;
+  @apply flex flex-col justify-center items-center mt-20 px-5 gap-10 w-full max-w-4xl mx-auto;
+}
+.borderAquaGrid {
+  @apply border-2 border-aqua p-1 rounded-md grid gap-2
 }
 .descCenter {
   @apply text-center flex justify-center mt-2;
 }
 .btn {
-  @apply bg-light1 rounded w-full text-dark0 font-semibold text-dark0;
+  @apply rounded w-full text-dark0 font-semibold h-10
 }
 .btn-normal {
   @apply bg-light1 rounded px-2 py-3 w-full text-dark0 font-semibold;
@@ -70,7 +76,15 @@
   @apply mt-20 grid gap-10 h-full px-10
 }
 
-/* homepage */
+/* Nav Section */
+.nav-content {
+ @apply flex justify-between items-center w-full
+}
+.nav-links {
+  @apply flex justify-between items-center gap-5
+}
+
+/* Homepage */
 .container {
   @apply w-full h-full mx-auto mt-20
 }
@@ -82,12 +96,9 @@
   hover:bg-dark1 hover:border-aqua hover:text-aqua
 }
 
-/* calculator */
-.calculator {
-  @apply w-full max-w-lg;
-}
+/* Calculator Section */
 .result {
-  @apply bg-dark2 p-2 rounded-full text-end;
+  @apply bg-dark2 p-2 rounded-full text-end mb-5;
 }
 .result-input {
   @apply text-end px-2 font-bold h-10 text-2xl;
@@ -95,14 +106,17 @@
 .keypad {
   @apply grid grid-cols-4 gap-4 p-2 font-bold;
 }
+.btn-math{
+  @apply bg-aqua_alt h-16 w-16 text-center rounded-full text-2xl place-self-center
+}
 .btn-calc {
-  @apply bg-dark2 h-16 w-16 text-center rounded-full text-2xl;
+  @apply bg-dark2 h-16 w-16 text-center rounded-full text-2xl place-self-center
 }
 .btn-calc-del {
-  @apply bg-red h-16 w-16 text-2xl rounded-full;
+  @apply bg-red h-16 w-16 text-2xl rounded-full place-self-center
 }
 
-/* dropdown section */
+/* Dropdown Component */
 .dropdown {
   @apply w-full h-full relative
 }
@@ -113,10 +127,25 @@
   @apply bg-dark2 py-1 rounded-md cursor-pointer
 }
 
-/* navbsection */
-.nav-content {
- @apply flex justify-between items-center w-full
+/* Notes section */
+.note-container {
+  @apply relative w-full h-full
 }
-.nav-links {
-  @apply flex justify-between items-center gap-5
+.note-list {
+  @apply flex flex-wrap px-5 sm:px-0 sm:grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-4 items-center justify-center
+}
+.note-item {
+  @apply p-2 h-36 md:h-40 w-full sm:w-60 md:w-60 relative rounded
+}
+.note-item-top-menu {
+  @apply flex justify-between items-center mb-4 gap-5
+}
+.note-item-body {
+  @apply max-h-24 overflow-hidden font-medium
+}
+.note-add-container {
+  @apply fixed bottom-10 left-[74.5%]
+}
+.note-add {
+  @apply hover:rotate-90 transition-all ease-in  h-12 w-12 bg-dark1 rounded-md flex justify-center items-center hover:text-aqua
 }

@@ -47,7 +47,7 @@ export default function TodoList() {
       </div>
 
       {/* count todo*/}
-      {!!todos && <h5>you have {todos.length} todos</h5>}
+      {!!todos && <h5>you have {todos.length} to do list</h5>}
 
       <div className="w-full">
         {todos.map((todo: any) => (
@@ -67,7 +67,7 @@ export default function TodoList() {
                 </button>
               </div>
             ) : (
-              <div className="mt-2 w-full flex gap-16 my-2 bg-dark1 p-2 justify-between items-center rounded">
+              <div className="mt-2 w-full flexBetweenCenter gap-16 my-2 bg-dark1 p-2 rounded">
                 <p>{todo.title}</p>
                 <div className="flex gap-3 items-center">
                   <button

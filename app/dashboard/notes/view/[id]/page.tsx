@@ -16,7 +16,7 @@ export default function page() {
     <MotionOpacity>
       <div className="flexCenterMargin">
         <ButtonBack />
-        <div className="flex justify-between items-center w-full">
+        <div className="flexBetweenCenter w-full">
           <h1>{note.title}</h1>
           <MenuTop bg={note.bg} id={note.id} idItem={id} />
         </div>

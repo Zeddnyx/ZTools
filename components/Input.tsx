@@ -9,6 +9,7 @@ interface Props {
   value?: string | number;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   disable?: boolean;
+  error?: string | null;
 }
 
 function Input({
@@ -19,13 +20,14 @@ function Input({
   placeholder,
   onChange,
   disable = false,
+  error,
 }: Props) {
 
   return (
     <fieldset>
       <legend>{label}</legend>
       <input
-        className="text-sm p-1 "
+        className="text-sm p-1"
         placeholder={placeholder}
         type={type}
         name={name}
@@ -33,6 +35,7 @@ function Input({
         onChange={onChange}
         disabled={disable}
       />
+      <span className="text-xs text-red">{error}</span>
     </fieldset>
   );
 }

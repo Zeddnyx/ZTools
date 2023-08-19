@@ -18,7 +18,7 @@ export default function page() {
           <Input
             label="Number"
             name="Send Whatsapp"
-            placeholder="ex: 62555666777"
+            placeholder="62555666777"
             type="number"
             value={input}
             onChange={(e) => setInput(e.target.value)}

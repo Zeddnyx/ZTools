@@ -19,6 +19,7 @@ module.exports = {
         green: "#b8bb26",
         blue: "#83a598",
         aqua: "#8ec07c",
+        aqua_alt: "#689d6a",
         red: "#fb4934",
       },
     },

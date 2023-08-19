@@ -1,3 +1,5 @@
+import {LuSave} from "react-icons/lu";
+
 interface MenuBottomProps {
   color: string[];
   setColor: (color: string) => void;
@@ -12,19 +14,19 @@ export const MenuBottom: React.FC<MenuBottomProps> = ({
   handleSave,
 }) => {
   return (
-    <div className="flex justify-between items-center w-full">
+    <div className="flexBetweenCenter w-full">
       <div className="flex gap-2 items-center">
         {color.map((color, i) => (
-          <div
+          <button
             key={i}
             className={`w-7 h-7 border rounded-full border-light1 border cursor-pointer hover:opacity-100 
             ${select == color ? "opacity-100" : "opacity-30"}`}
             style={{ backgroundColor: color }}
             onClick={() => setColor(color)}
-          ></div>
+          ></button>
         ))}
       </div>
-      <button onClick={handleSave}>Save</button>
+      <button onClick={handleSave}><LuSave size={20} className="text-light hover:text-aqua" /></button>
     </div>
   );
 };

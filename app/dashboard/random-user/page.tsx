@@ -34,7 +34,7 @@ export default function page() {
             users.map((user: any,id) => (
               <div
                 key={id}
-                className="capitalize w-full flex flex-col md:flex-row gap-2 justify-center items-center border-2 p-1 rounded-md" 
+                className="capitalize w-full flexCenterCenter flex-col md:flex-row gap-2 border-2 p-1 rounded-md" 
               >
                 <Image
                   src={user?.picture?.medium}

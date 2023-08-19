@@ -10,7 +10,7 @@ export default function Color() {
     "#50009D",
     "#00607A",
   ]);
-  const [saved, setSaved] = useState<string[]>([])
+  const [saved, setSaved] = useState<string[]>([]);
   const number = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   const string = ["A", "B", "C", "D", "E", "F"];
 
@@ -32,24 +32,18 @@ export default function Color() {
   };
 
   const handleSaved = () => {
-    setSaved([...saved, ...color])
-  }
+    setSaved([...saved, ...color]);
+  };
 
   return (
     <>
       <ShowColor color={color} setSaved={setSaved} />
 
       <div className="flex gap-4 mt-4">
-        <button
-          className="bg-light0 text-dark0 font-semibold rounded h-10 w-full px-4"
-          onClick={handleGenerate}
-        >
+        <button className="btn bg-light1" onClick={handleGenerate}>
           Generate
         </button>
-        <button
-          className="bg-aqua text-dark0 font-semibold rounded h-10 w-full px-2"
-          onClick={handleSaved}
-        >
+        <button className="btn bg-aqua_alt" onClick={handleSaved}>
           Save
         </button>
       </div>
@@ -58,5 +52,5 @@ export default function Color() {
         <ShowColor saved={saved} setSaved={setSaved} isShow={true} />
       </div>
     </>
-  )
+  );
 }
