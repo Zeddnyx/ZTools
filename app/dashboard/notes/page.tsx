@@ -1,15 +1,12 @@
 "use client";
 import dynamic from "next/dynamic";
+import { Title } from "@/components/Title";
 const Notes = dynamic(() => import("./Notes"), { ssr: false });
 
 export default function page() {
   return (
     <div className="flexCenterMargin h-full">
-      <div>
-        <h1>
-          Note App: Keep <span className="text-aqua">Your Notes</span>
-        </h1>
-      </div>
+      <Title title="Note App: Keep Notes" highlight="Your Notes" />
       <Notes />
     </div>
   );

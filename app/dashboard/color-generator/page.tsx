@@ -1,18 +1,16 @@
 import { MotionOpacity } from "@/components/Motion";
+import { Title } from "@/components/Title";
 import Color from "./Color";
 
 export default function page() {
-
   return (
     <MotionOpacity>
       <div className="flexCenterMargin">
-        <div>
-          <h1>
-            Color Generator : Create{" "}
-            <span className="text-aqua">Quickly and Easily</span>
-          </h1>
-          <p className="descCenter">The super fast color palettes generator!</p>
-        </div>
+        <Title
+          title="Color Generator"
+          highlight="Quickly and Easily"
+          desc="The super fast color palettes generator!"
+        />
         <div className="w-full flex justify-center flex-col">
           <Color />
         </div>

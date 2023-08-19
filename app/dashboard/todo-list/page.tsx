@@ -1,16 +1,15 @@
 import { MotionOpacity } from "@/components/Motion";
-import TodoList from "./TodoList"
+import TodoList from "./TodoList";
+import { Title } from "@/components/Title";
 
 const TodoListPage = () => {
-
   return (
     <MotionOpacity>
       <div className="flexCenterMargin">
-        <div>
-          <h1>To-Do List Manager: Organize Your Tasks and{" "}
-          <span className="text-aqua">Stay Productive</span>
-          </h1>
-        </div>
+        <Title
+          title="To-Do List Manager: Organize Your Tasks to"
+          highlight="Stay Productive"
+        />
         <TodoList />
       </div>
     </MotionOpacity>

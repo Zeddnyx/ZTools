@@ -2,20 +2,18 @@
 import { useState } from "react";
 import Input from "@/components/Input";
 import { MotionOpacity } from "@/components/Motion";
+import { Title } from "@/components/Title";
 
 export default function page() {
   const [input, setInput] = useState("");
   return (
     <MotionOpacity>
       <div className="flexCenterMargin">
-        <div>
-          <h1>Send whatsapp message{" "}
-            <span className="text-aqua">without save number</span>
-          </h1>
-          <p className="descCenter">
-            Just simply put number and you ready to go
-          </p>
-        </div>
+        <Title
+          title="Send Whatsapp"
+          highlight="without save number"
+          desc="Just simply put number and you ready to go"
+        />
         <form className="w-full h-full flex flex-col gap-5 items-center">
           <Input
             label="Number"

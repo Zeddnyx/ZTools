@@ -15,3 +15,8 @@ export const randomUser = async () => {
   return data
 }
 
+export const bored = async () => {
+  const response = await fetch('https://www.boredapi.com/api/activity')
+  const data = await response.json()
+  return data
+}

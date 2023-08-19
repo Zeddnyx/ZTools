@@ -7,6 +7,7 @@ import { WiEarthquake } from "react-icons/wi";
 import { FiUser } from "react-icons/fi";
 import { MdPassword, MdColorLens} from "react-icons/md";
 import { LuStickyNote } from "react-icons/lu";
+import { GiThink } from "react-icons/gi";
 
 interface Feature {
   title: string;
@@ -64,5 +65,10 @@ export const feature: Feature[] = [
     title: "color generator",
     link: "/dashboard/color-generator",
     icon: MdColorLens,
+  },
+  {
+    title: "Bored",
+    link: "/dashboard/bored",
+    icon: GiThink,
   },
 ];

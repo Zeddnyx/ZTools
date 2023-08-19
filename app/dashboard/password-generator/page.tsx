@@ -1,21 +1,15 @@
 import { MotionOpacity } from "@/components/Motion";
 import Password from "./Password";
+import { Title } from "@/components/Title";
 
 export default function page() {
   return (
     <MotionOpacity>
       <section className="flexCenterMargin">
-        <div>
-          <h1>Password Generator: Create{" "}
-            <span className="text-aqua">
-              Strong and Secure Password
-            </span>
-          </h1>
-          <p className="descCenter">
-            This tools generates strong and secure passwords that are difficult
-            to crack
-          </p>
-        </div>
+        <Title
+          title="Password Generator"
+          highlight="Create Strong Password"
+        />
         <Password />
       </section>
     </MotionOpacity>

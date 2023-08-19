@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { earthQuake, randomUser } from "./service";
+import { earthQuake, randomUser,bored } from "./service";
 
 export const fetchEarthQuake = () => {
   const { isInitialLoading, data, refetch } = useQuery({
@@ -24,4 +24,14 @@ export const fetchRandomUser = () => {
 
   const datas = data?.results[0]
   return { datas, isInitialLoading, refetch };
+}
+
+export const fetchBored = () => {
+  const { isInitialLoading, data, refetch } = useQuery({
+    queryKey: ["bored"],
+    queryFn: bored,
+    enabled: false,
+  });
+
+  return { data, isInitialLoading, refetch };
 }

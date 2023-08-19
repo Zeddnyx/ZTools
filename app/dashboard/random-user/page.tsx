@@ -1,57 +1,65 @@
-"use client"
+"use client";
 import Loading from "@/app/loading";
 import { fetchRandomUser } from "@/services/queryFetch";
 import { MotionOpacity } from "@/components/Motion";
+import { Title } from "@/components/Title";
+import Image from "next/image";
+import { useState } from "react";
 
 export default function page() {
+  const [users, setUsers] = useState<any[]>([]);
   const { datas, isInitialLoading, refetch } = fetchRandomUser();
 
   const handleClick = () => {
     refetch();
+    datas ? setUsers((user) => [...user, datas]) : "";
   };
 
   return (
     <MotionOpacity>
       <div className="flexCenterMargin">
-        <div>
-          <h1>
-            User Randomizer: Generate random{" "}
-            <span className="text-aqua">User Info</span>
-          </h1>
-          <p className="descCenter">
-            This tool generates random user info for use in testing or creating
-            user account
-          </p>
-        </div>
+        <Title
+          title="User Randomizer"
+          highlight="Generate random User Info"
+          desc="This tool generates random user info for use in testing or creating user account"
+        />
         <button onClick={handleClick} className="btn h-10">
           Generate
         </button>
 
         {isInitialLoading && <Loading />}
 
-        {datas && (
-          <div className="capitalize w-full flex flex-col md:flex-row gap-2 justify-center items-center">
-            <img
-              src={datas?.picture?.large}
-              alt="profile"
-              className="h-[220px]"
-            />
-            <div>
-              <p>Name: {datas?.name?.first}</p>
-              <p>Email: {datas?.email}</p>
-              <p>Phone: {datas?.cell}</p>
-              <p>Gender: {datas?.gender}</p>
-              <p>Location: {datas?.location?.city}</p>
-              <p>Country: {datas?.location?.country}</p>
-              <p>postcode: {datas?.location?.postcode}</p>
-              <p>State: {datas?.location?.state}</p>
-              <p>
-                Street: {datas?.location?.street?.number},{" "}
-                {datas?.location?.street?.name}
-              </p>
-            </div>
-          </div>
-        )}
+        <div className="grid grid-cols-2 gap-2">
+          {users &&
+            users.map((user: any,id) => (
+              <div
+                key={id}
+                className="capitalize w-full flex flex-col md:flex-row gap-2 justify-center items-center border-2 p-1 rounded-md" 
+              >
+                <Image
+                  src={user?.picture?.medium}
+                  alt="profile"
+                  width={180}
+                  height={190}
+                />
+                <div className="grid gap-2 text-sm">
+                  <p>Name: {user?.name?.first}</p>
+                  <span className="hidden md:block">
+                  <p>Email: {user?.email}</p>
+                  </span>
+                  <p>Phone: {user?.cell}</p>
+                  <p>Gender: {user?.gender}</p>
+                  <p>
+                    Country: {user?.location?.country},{user?.location?.state}
+                  </p>
+                  <p>
+                    Street: {user?.location?.street?.number},{" "}
+                    {user?.location?.street?.name}
+                  </p>
+                </div>
+              </div>
+            ))}
+        </div>
       </div>
     </MotionOpacity>
   );

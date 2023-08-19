@@ -1,7 +1,8 @@
-"use client"
+"use client";
 import Loading from "@/app/loading";
 import { fetchEarthQuake } from "@/services/queryFetch";
 import { MotionOpacity } from "@/components/Motion";
+import { Title } from "@/components/Title";
 
 export default function page() {
   const { datas, isInitialLoading, refetch } = fetchEarthQuake();
@@ -13,17 +14,11 @@ export default function page() {
   return (
     <MotionOpacity>
       <div className="flexCenterMargin">
-        <div>
-          <h1>
-            Earthquakes check get real-time updates on{" "}
-            <span className="text-aqua">Earthquakes indonesian</span>
-          </h1>
-          <p className="descCenter">
-            This tool provides realtime updates on earthquakes around indonesia,
-            this API is made by{" "}
-              <a href="https://github.com/renomureza">Renomureza</a>
-          </p>
-        </div>
+        <Title
+          title="Earthquakes check"
+          highlight="indonesian"
+          desc="Provide realtime updates on earthquakes around indonesia this API is made by{' '}<a href='https://github.com/renomureza'>Renomureza</a>"
+        />
         <button onClick={handleClick} className="btn h-10">
           Track
         </button>
