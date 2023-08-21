@@ -6,6 +6,7 @@ export const yearRandom = (year: any) => {
 };
 
 export const month = [
+  "Random",
   "01",
   "02",
   "03",
@@ -20,6 +21,7 @@ export const month = [
   "12",
 ];
 export const year = [
+  "Random",
   "2023",
   "2024",
   "2025",

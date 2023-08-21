@@ -23,7 +23,7 @@ export default function page() {
           highlight="Generate random User Info"
           desc="This tool generates random user info for use in testing or creating user account"
         />
-        <button onClick={handleClick} className="btn bg-light1 h-10">
+        <button onClick={handleClick} className="btn bg-light1 h-10 w-28">
           Generate
         </button>
 

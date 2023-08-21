@@ -1,5 +1,4 @@
 "use client";
-import { color } from "framer-motion";
 import { useState } from "react";
 import { FiDelete } from "react-icons/fi";
 

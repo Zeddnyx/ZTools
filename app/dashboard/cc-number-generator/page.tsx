@@ -1,6 +1,7 @@
 import { Title } from "@/components/Title";
 import { MotionOpacity } from "@/components/Motion";
-import Form from "./Form";
+import dynamic from "next/dynamic";
+const Form = dynamic(() => import("./Form"), { ssr: false });
 
 export default function page() {
   return (

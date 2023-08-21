@@ -19,7 +19,7 @@ export default function page() {
           highlight="indonesian"
           desc="Provide realtime updates on earthquakes around indonesia this API is made by{' '}<a href='https://github.com/renomureza'>Renomureza</a>"
         />
-        <button onClick={handleClick} className="btn bg-light1 h-10">
+        <button onClick={handleClick} className="btn bg-light1 h-10 w-20">
           Track
         </button>
         {isInitialLoading && <Loading />}

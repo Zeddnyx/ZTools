@@ -21,7 +21,7 @@ export default function page() {
         highlight="finding things to do"
       />
       <div className="flexCenterCenter">
-        <button className="btn bg-light1 w-20 h-10" onClick={() => handleClick()}>
+        <button className="btn bg-light1 w-28 h-10" onClick={() => handleClick()}>
           Find Activity
         </button>
       </div>

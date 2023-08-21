@@ -61,7 +61,7 @@
   @apply text-center flex justify-center mt-2;
 }
 .btn {
-  @apply rounded w-full text-dark0 font-semibold h-10
+  @apply rounded  text-dark0 font-semibold h-10 px-2
 }
 .btn-normal {
   @apply bg-light1 rounded px-2 py-3 w-full text-dark0 font-semibold;
@@ -115,10 +115,10 @@
 
 /* Dropdown Component */
 .dropdown {
-  @apply w-full h-full relative
+  @apply w-full h-full relative px-2
 }
 .dropdown-content {
-  @apply absolute top-10 left-0 w-full bg-dark2  rounded-md
+  @apply absolute top-8 px-1 left-0 w-full h-32 overflow-y-auto bg-dark2 rounded-md appearance-none
 }
 .dropdown-item {
   @apply bg-dark2 py-1 rounded-md cursor-pointer

@@ -40,10 +40,10 @@ export default function Color() {
       <ShowColor color={color} setSaved={setSaved} />
 
       <div className="flex gap-4 mt-4">
-        <button className="btn bg-light1" onClick={handleGenerate}>
+        <button className="btn bg-light1 w-full" onClick={handleGenerate}>
           Generate
         </button>
-        <button className="btn bg-aqua_alt" onClick={handleSaved}>
+        <button className="btn bg-aqua_alt w-full" onClick={handleSaved}>
           Save
         </button>
       </div>
