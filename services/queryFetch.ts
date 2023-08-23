@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { earthQuake, randomUser, bored, article } from "./service";
+import { earthQuake, randomUser, bored } from "./service";
 
 export const fetchEarthQuake = () => {
   const { isInitialLoading, data, refetch } = useQuery({
@@ -34,14 +34,5 @@ export const fetchBored = () => {
   });
 
   return { data, isInitialLoading, refetch };
-};
-
-export const fetchArticle = () => {
-  const { isLoading, data, isError, error } = useQuery({
-    queryKey: ["article"],
-    queryFn: article,
-  });
-
-  return { data, isLoading, isError, error };
 };
 

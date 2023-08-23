@@ -21,9 +21,3 @@ export const bored = async () => {
   return data;
 };
 
-export const article = async () => {
-  const response = await fetch("/api/dev");
-  const data = await response.json();
-  return data;
-};
-

@@ -6,7 +6,7 @@ const Notes = dynamic(() => import("./Notes"), { ssr: false });
 export default function page() {
   return (
     <div className="flexCenterMargin h-full">
-      <Title title="Note App: Keep Notes" highlight="Your Notes" />
+      <Title title="Note App: Keep" highlight="Your Notes" />
       <Notes />
     </div>
   );
