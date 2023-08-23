@@ -17,9 +17,9 @@ export async function GET() {
       const img = el.querySelector("img")?.src;
       const title = el.querySelector(".entry-title")?.textContent;
       const info = el.querySelector(".addinfox-text")?.textContent;
-      const link = el.querySelector(".tip").href;
+//       const link = el.querySelector(".tip").href;
       const quality = el.querySelector(".overlay")?.textContent;
-      data.push({ img, title, info, link, quality });
+      data.push({ img, title, info,  quality });
     });
     return data;
   });
