@@ -3,6 +3,7 @@ import Loading from "@/app/loading";
 import { fetchEarthQuake } from "@/services/queryFetch";
 import { MotionOpacity } from "@/components/Motion";
 import { Title } from "@/components/Title";
+import Image from "next/image";
 
 export default function page() {
   const { datas, isInitialLoading, refetch } = fetchEarthQuake();
@@ -36,7 +37,7 @@ export default function page() {
             <p>{datas?.wilayah}</p>
             <p>{datas?.potensi}</p>
             <p>{datas?.dirasakan}</p>
-            <img src={datas?.shakemap} alt={datas?.shakemap} />
+            <Image src={datas?.shakemap} alt={datas?.shakemap} width={500} height={500} />
           </div>
         )}
       </div>
