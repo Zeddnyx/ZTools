@@ -24,6 +24,9 @@
   h5 {
     @apply text-sm md:text-base font-bold leading-tight capitalize
   }
+  h6 {
+    @apply text-xs md:text-sm font-bold leading-tight
+  }
   p {
     @apply text-xs sm:text-sm leading-tight
   }

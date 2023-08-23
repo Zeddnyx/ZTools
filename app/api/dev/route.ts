@@ -1,9 +1,9 @@
-import { NextApiRequest } from "next";
-const search = "reactjs";
-const url = `https://dev.to/search?q=${search}&sort_by=published_at&sort_direction=desc`;
+import { NextRequest, NextResponse } from "next/server";
 import puppeteer from "puppeteer";
 
-export async function GET(req: NextApiRequest) {
+export async function GET(req: NextRequest ) {
+const search = "Frotend Developer";
+const url = `https://dev.to/search?q=${search}&sort_by=published_at&sort_direction=desc`;
   const request = req.method === "GET";
   if (request) {
     const browser = await puppeteer.launch({
@@ -32,8 +32,7 @@ export async function GET(req: NextApiRequest) {
     });
 
     await browser.close();
-
-    return result;
+    return NextResponse.json(result);
   } else {
     return console.log("error");
   }

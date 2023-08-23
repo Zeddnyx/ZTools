@@ -1,20 +1,16 @@
-"use client";
+import { Title } from "@/components/Title";
+import ListArticle from "./ListArticle";
 
 export default function page() {
-  const data: any = [];
-  fetch("http://localhost:3000/api/dev/article"
-  ).then((res) => {
-    if (res.ok) {
-      console.log(res);
-      data.push(res);
-    }
-    else {
-      console.log(res);
-    }
-  });
   return (
-    <div className="flexCenterMarin">
-      page
+    <div className="flexCenterMargin">
+      <Title
+        title="Article App: For"
+        highlight="Frontend Developer"
+        desc="Get the latest News about Frontend Developer"
+      />
+      <ListArticle />
     </div>
   );
 }
+
