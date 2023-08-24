@@ -28,7 +28,7 @@
     @apply text-xs md:text-sm font-bold leading-tight
   }
   p {
-    @apply text-xs sm:text-sm leading-tight
+    @apply text-sm leading-tight
   }
   fieldset {
     @apply border-2 border-light1 p-1 rounded w-full w-full  text-start;
@@ -43,7 +43,7 @@
     @apply outline-none flex justify-center items-center text-center
   }
   nav {
-    @apply px-5 md:px-16 lg:px-20 fixed top-0 left-0 z-50 flex justify-between items-center h-14 w-full backdrop-filter backdrop-blur-sm bg-opacity-80 bg-dark0;
+    @apply px-5 fixed top-0 left-0 z-50 flex justify-between items-center h-14 w-full backdrop-filter backdrop-blur-sm bg-opacity-80 bg-dark0;
   }
 }
 
@@ -55,7 +55,10 @@
   @apply flex items-center justify-between gap-3;
 }
 .flexCenterMargin {
-  @apply flex flex-col justify-center items-center mt-20 px-5 gap-10 w-full max-w-4xl mx-auto;
+  @apply flex flex-col justify-center items-center mt-20 px-5 py-4 gap-10 w-full max-w-4xl mx-auto;
+}
+.flexColCenter {
+  @apply flex flex-col items-center;
 }
 .borderAquaGrid {
   @apply border-2 border-aqua p-1 rounded-md grid gap-2
@@ -70,10 +73,10 @@
   @apply bg-light1 rounded px-2 py-3 w-full text-dark0 font-semibold;
 }
 .btn-delete {
-  @apply bg-red rounded w-full px-5;
+  @apply text-red bg-dark2 rounded w-full px-5;
 }
 .btn-edit {
-  @apply bg-yellow rounded w-full px-5 text-dark0;
+  @apply text-yellow bg-dark2 rounded w-full px-5
 }
 .about {
   @apply mt-20 grid gap-10 h-full px-10
@@ -118,7 +121,7 @@
 
 /* Dropdown Component */
 .dropdown {
-  @apply w-full h-full relative px-2
+  @apply w-full h-full relative
 }
 .dropdown-content {
   @apply absolute top-8 px-1 left-0 w-full h-32 overflow-y-auto bg-dark2 rounded-md appearance-none
@@ -132,20 +135,29 @@
   @apply relative w-full h-full
 }
 .note-list {
-  @apply flex flex-wrap px-5 sm:px-0 sm:grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-4 items-center justify-center
+  @apply flex flex-wrap px-5 sm:px-0 sm:grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-4 md:gap-3 lg:gap-5 items-center justify-center
 }
 .note-item {
-  @apply p-2 h-36 md:h-40 w-full sm:w-60 md:w-60 relative rounded
+  @apply p-2 h-36 md:h-40 w-4/5 sm:w-60 lg:w-72 relative rounded
 }
 .note-item-top-menu {
   @apply flex justify-between items-center mb-4 gap-5
 }
 .note-item-body {
-  @apply max-h-24 overflow-hidden font-medium
+  @apply max-h-24 overflow-hidden font-medium text-base
 }
 .note-add-container {
-  @apply fixed bottom-10 left-[74.5%]
+  @apply w-full flex justify-end mt-5
 }
 .note-add {
   @apply hover:rotate-90 transition-all ease-in  h-12 w-12 bg-dark1 rounded-md flex justify-center items-center hover:text-aqua
 }
+
+/* TodoList Section */
+.todo-add-container {
+  @apply w-full flex justify-end
+}
+.todo-add-cancel {
+  @apply bg-red px-5 rounded
+}
+

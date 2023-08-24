@@ -2,7 +2,6 @@ import { TStore, TTodo, TNote } from "./types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-
 export const useStore = create(
   persist<TStore>(
     (set) => ({
@@ -25,11 +24,11 @@ export const useStore = create(
         }));
       },
 
-      // notes 
+      // notes
       notes: [],
-      setNotes: (title: string, body: string, bg:string) => {
+      setNotes: (title: string, body: string, bg: string) => {
         set((state: any) => ({
-          notes: [...state.notes, { id: Date.now(), title, body, bg}],
+          notes: [...state.notes, { id: Date.now(), title, body, bg }],
         }));
       },
       deleteNotes: (id: number) => {
@@ -37,10 +36,17 @@ export const useStore = create(
           notes: state.notes.filter((notes: TNote) => notes?.id !== id),
         }));
       },
-      editNotes: (id: number, newNotes: string, newBody: string, newBg:string) => {
+      editNotes: (
+        id: number,
+        newNotes: string,
+        newBody: string,
+        newBg: string,
+      ) => {
         set((state: any) => ({
           notes: state.notes.map((notes: TNote) =>
-            notes.id === id ? { ...notes, title: newNotes, body: newBody, bg: newBg } : notes,
+            notes.id === id
+              ? { ...notes, title: newNotes, body: newBody, bg: newBg }
+              : notes,
           ),
         }));
       },

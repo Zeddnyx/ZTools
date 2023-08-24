@@ -27,7 +27,7 @@ function Input({
     <fieldset>
       <legend>{label}</legend>
       <input
-        className="text-sm p-1"
+        className="text-sm p-1 outline-none focus:ring-0 "
         placeholder={placeholder}
         type={type}
         name={name}

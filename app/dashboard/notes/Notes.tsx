@@ -14,7 +14,7 @@ export default function Notes() {
       <div className="note-container">
         <div className="note-list">
           {notes &&
-            notes.map((note, id) => (
+            notes.map((note: any, id:number) => (
               <div
                 key={note.id}
                 className="note-item"
