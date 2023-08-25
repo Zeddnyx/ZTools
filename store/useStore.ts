@@ -23,6 +23,12 @@ export const useStore = create(
           ),
         }));
       },
+      doneTodos: [],
+      setDoneTodos: (title: string, id: number) => {
+        set((state: any) => ({
+          doneTodos: [...state.doneTodos, { id, title }],
+        }));
+      },
 
       // notes
       notes: [],

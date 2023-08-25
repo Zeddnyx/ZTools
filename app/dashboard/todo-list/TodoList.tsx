@@ -1,13 +1,18 @@
 "use client";
 import React, { useState } from "react";
-import Input from "@/components/Input";
 import { MdDeleteOutline } from "react-icons/md";
 import { AiOutlineEdit } from "react-icons/ai";
 import { IoMdAdd } from "react-icons/io";
+import { MdOutlineDoneOutline } from "react-icons/md";
+
+import Input from "@/components/Input";
 import { useStoreApp } from "@/store/useStoreApp";
+import { DoneList } from "./DoneList";
 
 export default function TodoList() {
-  const { todos, deleteTodos, editTodos, setTodos } = useStoreApp();
+  const { todos, deleteTodos, editTodos, setTodos, doneTodos, setDoneTodos } =
+    useStoreApp();
+  typeof window != "undefined";
 
   const [isAdd, setIsAdd] = useState(false);
   const [editId, setEditId] = useState<number | null>(null);
@@ -36,10 +41,16 @@ export default function TodoList() {
   const handleAdd = () => {
     setIsAdd((prev) => !prev);
   };
+
+  const handleDone = (item: any) => {
+    setDoneTodos(item.title, item.id);
+    deleteTodos(item.id);
+  };
+
   return (
     <>
       {/* count todo*/}
-      {!!todos && <h5>you have {todos.length} to do list</h5>}
+      {todos.length != 0 && <h5>you have {todos.length} to do list</h5>}
 
       <div className="w-full">
         {todos.map((todo: any) => (
@@ -61,8 +72,17 @@ export default function TodoList() {
             ) : (
               <div className="w-full">
                 <div className="mt-2 w-full flexBetweenCenter gap-16 my-2 bg-dark1 p-2 rounded">
+                  {/* shows todos */}
                   <p>{todo.title}</p>
+
+                  {/* action todos */}
                   <div className="flex gap-3 items-center">
+                    <button
+                      onClick={() => handleDone(todo)}
+                      className="btn-done h-10"
+                    >
+                      <MdOutlineDoneOutline />
+                    </button>
                     <button
                       onClick={() => handleEdit(todo.id, todo.title)}
                       className="btn-edit h-10"
@@ -104,10 +124,15 @@ export default function TodoList() {
       ) : (
         <div className="todo-add-container">
           <button onClick={handleAdd} className="note-add">
-              <IoMdAdd size={38} />
+            <IoMdAdd size={38} />
           </button>
         </div>
       )}
+
+      {/* Done todos */}
+      <div className="flex justify-start w-full">
+        <DoneList item={doneTodos} />
+      </div>
     </>
   );
 }

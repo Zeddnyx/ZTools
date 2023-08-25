@@ -73,10 +73,13 @@
   @apply bg-light1 rounded px-2 py-3 w-full text-dark0 font-semibold;
 }
 .btn-delete {
-  @apply text-red bg-dark2 rounded w-full px-5;
+  @apply text-red bg-dark2 rounded w-full px-3;
 }
 .btn-edit {
-  @apply text-yellow bg-dark2 rounded w-full px-5
+  @apply text-yellow bg-dark2 rounded w-full px-3
+}
+.btn-done {
+  @apply text-green bg-dark2 rounded w-full px-3
 }
 .about {
   @apply mt-20 grid gap-10 h-full px-10
@@ -150,7 +153,7 @@
   @apply w-full flex justify-end mt-5
 }
 .note-add {
-  @apply hover:rotate-90 transition-all ease-in  h-12 w-12 bg-dark1 rounded-md flex justify-center items-center hover:text-aqua
+  @apply hover:rotate-90 transition-all ease-in  h-12 w-12 bg-dark1 rounded-md flex justify-center items-center text-light2 hover:text-aqua
 }
 
 /* TodoList Section */
