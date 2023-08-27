@@ -14,7 +14,7 @@ export default function Notes() {
       <div className="note-container">
         <div className="note-list">
           {notes &&
-            notes.map((note: any, id:number) => (
+            notes.map((note: any, id: number) => (
               <div
                 key={note.id}
                 className="note-item"
@@ -30,7 +30,7 @@ export default function Notes() {
                   <p className="note-item-body">{note.body}</p>
                 </Link>
               </div>
-            ))}
+            )).reverse()}
         </div>
         <div className="note-add-container">
           <button className="note-add">

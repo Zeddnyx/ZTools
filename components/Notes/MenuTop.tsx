@@ -41,12 +41,12 @@ export const MenuTop = ({
 
       {isActive && (
         <div className="absolute top-6 right-2 shadow-md rounded bg-dark1 transition-all ease-in">
-          <div className={`${bg} px-4 py-2 space-y-4`}>
-            <button className="hover:text-red" onClick={() => handleDelete(id)}>
+          <div className={`${bg} px-4 py-4 space-y-6`}>
+            <button className="text-red" onClick={() => handleDelete(id)}>
               <MdDeleteOutline />
             </button>
             <button
-              className="hover:text-yellow"
+              className="text-yellow"
               onClick={() => handleEdit(idItem)}
             >
               <AiOutlineEdit />

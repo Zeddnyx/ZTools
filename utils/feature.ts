@@ -27,7 +27,7 @@ export const feature: Feature[] = [
     icon: BsClipboardCheck,
   },
   {
-    title: "Notes",
+    title: "keep notes",
     link: "/dashboard/notes",
     icon: LuStickyNote,
   },
@@ -37,7 +37,7 @@ export const feature: Feature[] = [
     icon: BsCreditCard2Front,
   },
   {
-    title: "send whatsapp",
+    title: "send messages",
     link: "/dashboard/send-whatsapp",
     icon: PiWhatsappLogoLight,
   },
@@ -67,8 +67,8 @@ export const feature: Feature[] = [
     icon: MdColorLens,
   },
   {
-    title: "Bored",
-    link: "/dashboard/bored",
+    title: "find activity",
+    link: "/dashboard/activity",
     icon: GiThink,
   },
 ];

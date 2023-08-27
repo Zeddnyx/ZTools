@@ -24,13 +24,12 @@ export const Form = memo(
           label="Notes"
           value={title}
           onChange={(e) => setInput({ ...input, title: e.target.value })}
-          error={!!title ?  null : "Title is required"}
         />
         <textarea
-          className="bg-transparent focus:outline-none focus:ring-0 resize-none w-full"
+          className="bg-transparent focus:outline-none focus:ring-0 resize-none w-full h-full"
           placeholder="Note"
           rows={10}
-          cols={50}
+          cols={200}
           value={body}
           onChange={(e) => setInput({ ...input, body: e.target.value })}
         ></textarea>

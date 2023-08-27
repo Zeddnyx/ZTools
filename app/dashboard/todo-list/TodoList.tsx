@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { MdDeleteOutline } from "react-icons/md";
 import { AiOutlineEdit } from "react-icons/ai";
 import { IoMdAdd } from "react-icons/io";
-import { MdOutlineDoneOutline } from "react-icons/md";
+import { MdOutlineDone } from "react-icons/md";
 
 import Input from "@/components/Input";
 import { useStoreApp } from "@/store/useStoreApp";
@@ -81,7 +81,7 @@ export default function TodoList() {
                       onClick={() => handleDone(todo)}
                       className="btn-done h-10"
                     >
-                      <MdOutlineDoneOutline />
+                      <MdOutlineDone />
                     </button>
                     <button
                       onClick={() => handleEdit(todo.id, todo.title)}
