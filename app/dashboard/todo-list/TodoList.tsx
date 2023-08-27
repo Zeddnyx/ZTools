@@ -89,12 +89,6 @@ export default function TodoList() {
                     >
                       <AiOutlineEdit />
                     </button>
-                    <button
-                      onClick={() => deleteTodos(todo.id)}
-                      className="btn-delete h-10"
-                    >
-                      <MdDeleteOutline />
-                    </button>
                   </div>
                 </div>
               </div>
