@@ -17,12 +17,14 @@ export const DoneList: React.FC<{ item: IDone[] }> = ({ item }) => {
   };
 
   return (
-    <div className="grid gap-2">
+    <div className="flex flex-col gap-2 items-start text-start">
       <button onClick={handleActive} className="flex gap-1 items-center">
         <span className={isActive ? "rotate-0" : "rotate-180"}>
           <IoIosArrowDropdown />
         </span>
+        <p>
         {item.length} Checked todo list
+        </p>
       </button>
 
       {isActive && (

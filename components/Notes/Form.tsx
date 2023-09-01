@@ -1,7 +1,9 @@
 import { memo } from "react";
+import { useParams } from "next/navigation";
+
 import { MenuBottom } from "@/components/Notes/MenuBottom";
 import { ButtonBack } from "@/components/Notes/ButtonBack";
-import Input from "@/components/Input";
+import { MenuTop } from "./MenuTop";
 
 type TForm = {
   title: string;
@@ -14,19 +16,26 @@ type TForm = {
 
 export const Form = memo(
   ({ title, body, bg, input, setInput, handleClick }: TForm) => {
+
+    const params = useParams();
+    const id = Number(params?.id)
+
     return (
       <div className="flexCenterMargin p-2 rounded">
-        <ButtonBack />
-        <Input
-          type="text"
-          name="title"
-          placeholder="Title"
-          label="Notes"
-          value={title}
-          onChange={(e) => setInput({ ...input, title: e.target.value })}
-        />
+        <ButtonBack handleSave={() => handleClick()} />
+        <div className="flexBetweenCenter w-full">
+          <input 
+            type="text"
+            name="title"
+            placeholder="Title"
+            value={title}
+            onChange={(e) => setInput({ ...input, title: e.target.value })}
+            className="font-bold text-2xl"
+          />
+          <MenuTop id={id} />
+        </div>
         <textarea
-          className="bg-transparent focus:outline-none focus:ring-0 resize-none w-full h-full"
+          className="bg-transparent focus:outline-none focus:ring-0 resize-none w-full h-screen"
           placeholder="Note"
           rows={10}
           cols={200}

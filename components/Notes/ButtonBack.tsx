@@ -1,13 +1,12 @@
 import { BiArrowBack } from "react-icons/bi";
-import { useRouter } from "next/navigation";
 
-export const ButtonBack = () => {
-  const router = useRouter();
-  const handleBack = () => {
-    router.push("/dashboard/notes");
-  };
+interface IBack {
+  handleSave: () => void;
+}
+
+export const ButtonBack: React.FC<IBack> = ({handleSave}) => {
   return (
-    <div className="flex w-full" onClick={handleBack}>
+    <div className="flex w-full" onClick={handleSave}>
       <button>
         <BiArrowBack />
       </button>

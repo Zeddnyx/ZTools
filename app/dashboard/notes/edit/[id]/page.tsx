@@ -23,7 +23,7 @@ export default function page() {
     editNotes(note.id, edit.title, edit.body, edit.bg);
     edit.title == "" && edit.body == ""
       ? null
-      : router.push(`/dashboard/notes/view/${id}`);
+      : router.push(`/dashboard/notes`);
   };
 
   return (

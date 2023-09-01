@@ -21,12 +21,12 @@ export default function Notes() {
                 style={{ backgroundColor: note.bg }}
               >
                 <div className="note-item-top-menu">
-                  <Link href={`/dashboard/notes/view/${id}`}>
+                  <Link href={`/dashboard/notes/edit/${id}`}>
                     <h4>{note.title}</h4>
                   </Link>
-                  <MenuTop bg={note.bg} id={note.id} idItem={id} />
+                  <MenuTop id={note.id} />
                 </div>
-                <Link href={`/dashboard/notes/view/${id}`}>
+                <Link href={`/dashboard/notes/edit/${id}`}>
                   <p className="note-item-body">{note.body}</p>
                 </Link>
               </div>
