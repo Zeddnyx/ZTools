@@ -57,9 +57,8 @@ export const Form = memo(
 
 const color = [
   "#504945",
-  "#bdae93",
-  "#b8bb26",
-  "#83a598",
-  "#8ec07c",
+  "#458588",
+  "#98971a",
+  "#689d6a",
   "#fb4934",
 ];
