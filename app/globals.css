@@ -141,13 +141,13 @@
   @apply flex flex-wrap px-5 sm:px-0 sm:grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-4 md:gap-3 lg:gap-5 items-center justify-center;
 }
 .note-item {
-  @apply p-2 h-36 md:h-40 w-4/5 sm:w-60 lg:w-72 relative rounded;
+  @apply p-2 h-full max-h-40 w-4/5 sm:w-60 lg:w-72 relative rounded;
 }
 .note-item-top-menu {
   @apply flex justify-between items-center mb-4 gap-5;
 }
 .note-item-body {
-  @apply max-h-24 overflow-hidden font-medium text-base;
+  @apply line-clamp-4 md:line-clamp-3 overflow-hidden font-medium text-base;
 }
 .note-add-container {
   @apply w-full flex justify-end mt-5;
