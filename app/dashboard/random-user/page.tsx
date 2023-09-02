@@ -23,18 +23,15 @@ export default function page() {
           highlight="Generate random User Info"
           desc="This tool generates random user info for use in testing or creating user account"
         />
-        <button onClick={handleClick} className="btn bg-light1 h-10 w-28">
-          Generate
-        </button>
 
-        {isInitialLoading && <Loading />}
+      {isInitialLoading && <p className="animate-pulse">Loading...</p>}
 
         <div className="grid grid-cols-2 gap-2">
           {users &&
             users.map((user: any,id) => (
               <div
                 key={id}
-                className="capitalize w-full flexCenterCenter flex-col md:flex-row gap-2 border-2 p-1 rounded-md" 
+                className="capitalize w-full flexCenterCenter flex-col md:flex-row gap-2 border-2 border-aqua p-1 rounded-md" 
               >
                 <Image
                   src={user?.picture?.medium}
@@ -60,6 +57,11 @@ export default function page() {
               </div>
             ))}
         </div>
+
+        <button onClick={handleClick} className="btn bg-light1 h-10 w-28">
+          Generate
+        </button>
+
       </div>
     </MotionOpacity>
   );

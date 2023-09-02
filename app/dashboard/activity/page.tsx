@@ -20,13 +20,8 @@ export default function page() {
         title="Bored App: A simple tool for"
         highlight="finding things to do"
       />
-      <div className="flexCenterCenter">
-        <button className="btn bg-light1 w-36 h-10" onClick={() => handleClick()}>
-          Find Activity
-        </button>
-      </div>
 
-      {isInitialLoading && <Loading />}
+      {isInitialLoading && <p className="animate-pulse">Loading...</p>}
 
       <div className="grid grid-cols-2 gap-2">
         {activity &&
@@ -42,6 +37,12 @@ export default function page() {
               <h4>{activity.activity}</h4>
             </div>
           ))}
+      </div>
+
+      <div className="flexCenterCenter">
+        <button className="btn bg-light1 w-36 h-10" onClick={() => handleClick()}>
+          Find Activity
+        </button>
       </div>
     </div>
   );
