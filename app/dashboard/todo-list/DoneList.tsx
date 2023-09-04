@@ -19,7 +19,7 @@ export const DoneList: React.FC<{ item: IDone[] }> = ({ item }) => {
   return (
     <div className="flex flex-col gap-2 items-start text-start">
       <button onClick={handleActive} className="flex gap-1 items-center">
-        <span className={isActive ? "rotate-0" : "rotate-180"}>
+        <span className={!isActive ? "rotate-0" : "rotate-180"}>
           <IoIosArrowDropdown />
         </span>
         <p>

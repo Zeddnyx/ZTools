@@ -1,13 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import { MdDeleteOutline } from "react-icons/md";
+
 import { AiOutlineEdit } from "react-icons/ai";
-import { IoMdAdd } from "react-icons/io";
 import { MdOutlineDone } from "react-icons/md";
 
 import Input from "@/components/Input";
 import { useStoreApp } from "@/store/useStoreApp";
 import { DoneList } from "./DoneList";
+import { ButtonAdd } from "@/components/ButtonAdd";
 
 export default function TodoList() {
   const { todos, deleteTodos, editTodos, setTodos, doneTodos, setDoneTodos } =
@@ -116,11 +116,7 @@ export default function TodoList() {
           </div>
         </div>
       ) : (
-        <div className="todo-add-container">
-          <button onClick={handleAdd} className="note-add">
-            <IoMdAdd size={38} />
-          </button>
-        </div>
+        <ButtonAdd isRoutes={false} href="" onClick={handleAdd} />
       )}
 
       {/* Done todos */}

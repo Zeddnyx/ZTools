@@ -1,6 +1,7 @@
 import { MotionOpacity } from "@/components/Motion";
-import TodoList from "./TodoList";
 import { Title } from "@/components/Title";
+import dynamic from "next/dynamic";
+const TodoList= dynamic(() => import("./TodoList"), { ssr: false });
 
 const TodoListPage = () => {
   return (
