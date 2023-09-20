@@ -8,6 +8,7 @@ import { FiUser } from "react-icons/fi";
 import { MdPassword, MdColorLens} from "react-icons/md";
 import { LuStickyNote } from "react-icons/lu";
 import { GiThink } from "react-icons/gi";
+import { MdOutlineScore } from "react-icons/md";
 
 interface Feature {
   title: string;
@@ -71,4 +72,9 @@ export const feature: Feature[] = [
     link: "/dashboard/activity",
     icon: GiThink,
   },
+  {
+    title: "words counter",
+    link: "/dashboard/words-counter",
+    icon: MdOutlineScore,
+  }
 ];
