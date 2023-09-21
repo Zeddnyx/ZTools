@@ -5,8 +5,8 @@ import { PiWhatsappLogoLight } from "react-icons/pi";
 import { AiFillCalculator } from "react-icons/ai";
 import { WiEarthquake } from "react-icons/wi";
 import { FiUser } from "react-icons/fi";
-import { MdPassword, MdColorLens} from "react-icons/md";
-import { LuStickyNote } from "react-icons/lu";
+import { MdPassword, MdColorLens } from "react-icons/md";
+import { LuBrush, LuStickyNote } from "react-icons/lu";
 import { GiThink } from "react-icons/gi";
 import { MdOutlineScore } from "react-icons/md";
 
@@ -76,5 +76,10 @@ export const feature: Feature[] = [
     title: "words counter",
     link: "/dashboard/words-counter",
     icon: MdOutlineScore,
-  }
+  },
+  {
+    title: "color preview",
+    link: "/dashboard/color-preview",
+    icon: LuBrush,
+  },
 ];
