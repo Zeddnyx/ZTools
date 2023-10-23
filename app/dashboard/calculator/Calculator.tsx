@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
+import { KeyboardEvent, ChangeEvent, useState } from "react";
 import { FiDelete } from "react-icons/fi";
 
 export default function Calculator() {
   const [result, setResult] = useState("");
   const [math, setMath] = useState("");
- const color = math.includes("-") ? "text-red_alt" : "text-aqua";
+  const color = math.includes("-") ? "text-red_alt" : "text-aqua";
 
   const handleClick = (e: any) => {
     setResult(result.concat(e.target.name));
@@ -27,10 +27,29 @@ export default function Calculator() {
       setMath("Error");
     }
   };
+
+  const handleResultChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setResult(e.target.value);
+  };
+
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      calculate();
+    }
+  };
+
   return (
     <>
       <div className="result">
-        <h3>{result} </h3>
+        <h3>
+          <input
+            onChange={handleResultChange}
+            onKeyDown={handleKeyDown}
+            className="text-right"
+            type="text"
+            value={result}
+          />
+        </h3>
         {math && <h4 className={color}>{math}</h4>}
       </div>
 
